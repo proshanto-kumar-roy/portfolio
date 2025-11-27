@@ -137,47 +137,49 @@ I am enthusiastic about collaborating with like-minded individuals and contribut
         </p>
 
 <style>
-    /* এই স্টাইলটুকু শুধুমাত্র এই সেকশনের জন্য */
     .my-skills-container {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* ফন্ট তোমার ওয়েবসাইটের ডিফল্ট ফন্টই পাবে */
         padding: 20px 0;
         max-width: 100%;
     }
 
     .my-section-title {
-        color: #333;
-        font-size: 1.6rem;
-        margin-bottom: 20px;
-        padding-bottom: 8px;
-        border-bottom: 3px solid #007bff; /* নীল রঙের আন্ডারলাইন */
+        color: #ffffff; /* টাইটেল এখন সাদা হবে */
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #007bff; /* নীল আন্ডারলাইন */
         display: inline-block;
+        font-weight: bold;
     }
 
     .my-skills-wrapper {
         display: flex;
-        flex-wrap: wrap; /* জায়গা না হলে নিচে নামবে */
-        gap: 10px; /* এক ট্যাগ থেকে আরেক ট্যাগের দূরত্ব */
+        flex-wrap: wrap;
+        gap: 15px; /* গ্যাপ একটু বাড়ানো হলো */
     }
 
     .my-tag {
-        background-color: #f3f4f6;
-        color: #374151;
-        padding: 8px 16px;
-        border-radius: 50px; /* গোল বা ক্যাপসুল শেপ */
+        /* ডার্ক ব্যাকগ্রাউন্ড (কার্ডের মতো) */
+        background-color: rgba(255, 255, 255, 0.05); 
+        color: #e2e8f0; /* লেখার রং হালকা সাদা */
+        padding: 10px 20px;
+        border-radius: 50px;
         font-size: 0.95rem;
         font-weight: 500;
-        border: 1px solid #e5e7eb;
+        /* বর্ডার হালকা দেখা যাবে */
+        border: 1px solid rgba(255, 255, 255, 0.2); 
         transition: all 0.3s ease;
         cursor: default;
     }
 
-    /* মাউস নিলে যা হবে */
+    /* মাউস নিলে যা হবে (নীল গ্লো) */
     .my-tag:hover {
-        background-color: #007bff; /* নীল ব্যাকগ্রাউন্ড */
-        color: white;
-        border-color: #007bff;
-        transform: translateY(-2px); /* হালকা উপরে উঠবে */
-        box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+        background-color: rgba(0, 123, 255, 0.2); /* হালকা নীল ব্যাকগ্রাউন্ড */
+        border-color: #007bff; /* বর্ডার নীল হবে */
+        color: #ffffff; /* লেখা পুরো সাদা হবে */
+        transform: translateY(-3px);
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.4); /* গ্লো এফেক্ট */
     }
 </style>
 
