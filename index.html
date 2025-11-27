@@ -200,7 +200,6 @@ I am enthusiastic about collaborating with like-minded individuals and contribut
 
 
 
-
        <h2 class="section-title">What I Do</h2>
 <div class="project-grid">
     
@@ -221,111 +220,41 @@ I am enthusiastic about collaborating with like-minded individuals and contribut
 
 </div> 
 
-
-
-
-<style>
-    /* গ্রিড লেআউট: পাশাপাশি ৩টি কার্ড দেখানোর জন্য */
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        padding: 20px 0;
-    }
-
-    /* কার্ডের ডিজাইন */
-    .service-card {
-        background-color: rgba(255, 255, 255, 0.05); /* ডার্ক ট্রান্সপারেন্ট ব্যাকগ্রাউন্ড */
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 35px 25px;
-        text-align: center; /* লেখা মাঝখানে থাকবে */
-        transition: all 0.3s ease;
-    }
-
-    /* মাউস নিলে যা হবে */
-    .service-card:hover {
-        border-color: #3b82f6; /* তোমার পছন্দের নীল রং */
-        transform: translateY(-5px); /* উপরে উঠবে */
-        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); /* নীল আভা/গ্লো */
-        background-color: rgba(255, 255, 255, 0.08);
-    }
-
-    /* ইমোজি বা আইকনের সাইজ */
-    .service-icon {
-        font-size: 3rem;
-        margin-bottom: 15px;
-        display: inline-block;
-    }
-
-    /* টাইটেল ডিজাইন */
-    .service-card h3 {
-        color: #3b82f6; /* লাইট ব্লু */
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        font-weight: 600;
-    }
-
-    /* প্যারাগ্রাফ বা ডেসক্রিপশন */
-    .service-card p {
-        color: #d1d5db; /* হালকা ধূসর টেক্সট */
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-</style>
-
-<div class="my-skills-container"> <h2 class="my-section-title">What I Do</h2>
-
-    <div class="services-grid">
-
-        <div class="service-card">
-            <span class="service-icon">📊</span>
-            <h3>Data Analytics</h3>
-            <p>
-                Business data clean, analyze এবং visualize করে 
-                valuable insights বের করি যা decision-making-এ সহায়তা করে।
-            </p>
-        </div>
-
-        <div class="service-card">
-            <span class="service-icon">🐍</span>
-            <h3>Python for Data</h3>
-            <p>
-                Pandas, NumPy, Matplotlib ব্যবহার করে EDA, statistical analysis 
-                এবং ML-based predictive model তৈরি করি।
-            </p>
-        </div>
-
-        <div class="service-card">
-            <span class="service-icon">📈</span>
-            <h3>Dashboard & Reporting</h3>
-            <p>
-                Power BI এবং Excel দিয়ে interactive dashboards তৈরি করি 
-                যাতে business performance সহজেই track করা যায়।
-            </p>
-        </div>
-
+        <h2 class="section-title">What People Say</h2>
+<div class="project-grid">
+    
+    <div class="card" style="border-left: 4px solid #f59e0b;">
+        <p style="font-style: italic;">"Proshanto is a dedicated learner. His IoT project was very innovative. Highly recommended!"</p>
+        <h4 style="margin-bottom: 0; color: #3b82f6;">- Zin Linn Htoo</h4>
+        <span style="font-size: 0.8rem; color: #94a3b8;">Classmate & Singer</span>
     </div>
-</div>
 
+    <div class="card" style="border-left: 4px solid #10b981;">
+        <p style="font-style: italic;">"Great problem solving skills in C+. He manages social media very professionally."</p>
+        <h4 style="margin-bottom: 0; color: #3b82f6;">-Susan</h4>
+        <span style="font-size: 0.8rem; color: #94a3b8;">CSE Student, Sharda University</span>
+    </div>
+
+</div>
 
         
 
 
 
 <style>
+    /* কার্ডগুলো পাশাপাশি রাখার জন্য গ্রিড সিস্টেম */
     .projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px; /* কার্ডগুলোর মাঝের দূরত্ব */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* রেস্পন্সিভ গ্রিড */
+        gap: 20px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         padding: 20px 0;
     }
 
+    /* প্রজেক্ট কার্ডের মেইন ডিজাইন */
     .project-card {
-        background-color: rgba(255, 255, 255, 0.05); /* ডার্ক থিম ব্যাকগ্রাউন্ড */
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.05); /* হালকা স্বচ্ছ কালো */
+        border: 1px solid rgba(255, 255, 255, 0.1); /* খুব হালকা বর্ডার */
         border-radius: 12px;
         padding: 25px;
         transition: all 0.3s ease;
@@ -334,26 +263,30 @@ I am enthusiastic about collaborating with like-minded individuals and contribut
         justify-content: space-between;
     }
 
+    /* কার্ডে মাউস নিলে যা হবে */
     .project-card:hover {
-        border-color: #007bff;
-        transform: translateY(-5px);
+        border-color: #007bff; /* নীল বর্ডার */
+        transform: translateY(-5px); /* একটু উপরে উঠবে */
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
+    /* টাইটেল ডিজাইন */
     .project-card h3 {
         color: #fff;
-        font-size: 1.35rem;
+        font-size: 1.4rem;
         margin-top: 0;
         margin-bottom: 15px;
     }
 
+    /* ডেসক্রিপশন ডিজাইন */
     .project-card p {
-        color: #cccccc;
+        color: #cccccc; /* হালকা ধূসর যাতে কালোতে পড়া যায় */
         font-size: 0.95rem;
         line-height: 1.6;
         margin-bottom: 20px;
     }
 
+    /* ট্যাগ বা টেকনোলজিগুলোর র‍্যাপার */
     .tech-stack {
         display: flex;
         flex-wrap: wrap;
@@ -361,15 +294,17 @@ I am enthusiastic about collaborating with like-minded individuals and contribut
         margin-bottom: 15px;
     }
 
+    /* ছোট ট্যাগগুলোর ডিজাইন */
     .tech-tag {
         font-size: 0.75rem;
-        background-color: rgba(0, 123, 255, 0.15);
-        color: #61dafb;
+        background-color: rgba(0, 123, 255, 0.15); /* হালকা নীল আভা */
+        color: #61dafb; /* উজ্জ্বল নীল টেক্সট */
         padding: 4px 10px;
         border-radius: 4px;
         font-weight: 500;
     }
 
+    /* GitHub লিংক বা বাটন ডিজাইন */
     .project-link {
         text-decoration: none;
         color: #fff;
@@ -379,78 +314,43 @@ I am enthusiastic about collaborating with like-minded individuals and contribut
         text-align: center;
         font-weight: bold;
         transition: background 0.3s;
-        align-self: flex-start;
+        align-self: flex-start; /* বামে রাখবে */
         font-size: 0.9rem;
     }
 
     .project-link:hover {
-        background-color: #0056b3;
+        background-color: #0056b3; /* হোভার করলে গাঢ় নীল */
     }
 </style>
-
+ <h2 class="section-title">My Project</h2>
 <div class="projects-grid">
     
     <div class="project-card">
         <h3>Retail Sales Performance Dashboard</h3>
+        
         <div class="tech-stack">
             <span class="tech-tag">Power BI</span>
             <span class="tech-tag">Data Modeling</span>
             <span class="tech-tag">DAX</span>
         </div>
+
         <p>
             Designed an interactive business dashboard analyzing revenue, profit margin
             and regional performance. Identified top 10 profitable products, seasonal 
             trends and key customer segments to support business decision-making.
         </p>
-        <a href="#" class="project-link">GitHub Repo</a>
+        
+        <a href="#" class="project-link">View on GitHub</a>
     </div>
 
-    <div class="project-card">
-        <h3>Customer Segmentation using RFM Analysis</h3>
-        <div class="tech-stack">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">SQL</span>
-            <span class="tech-tag">Machine Learning</span>
-        </div>
-        <p>
-            Performed RFM-based clustering to classify customers into groups such as
-            Loyal, At-Risk and New Users. Extracted actionable insights that can 
-            improve retention and increase marketing efficiency.
-        </p>
-        <a href="#" class="project-link">GitHub Repo</a>
     </div>
 
-    <div class="project-card">
-        <h3>Movie Rating Prediction Model</h3>
-        <div class="tech-stack">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Scikit-Learn</span>
-            <span class="tech-tag">EDA</span>
-        </div>
-        <p>
-            Built a regression model to predict IMDB ratings using feature engineering
-            and exploratory data analysis. Achieved significant accuracy improvement
-            through correlation analysis and data preprocessing.
-        </p>
-        <a href="#" class="project-link">GitHub Repo</a>
-    </div>
 
-    <div class="project-card">
-        <h3>Road Accident Data Insights & Visualization</h3>
-        <div class="tech-stack">
-            <span class="tech-tag">Power BI</span>
-            <span class="tech-tag">Excel</span>
-            <span class="tech-tag">Data Cleaning</span>
-        </div>
-        <p>
-            Analyzed road accident trends across categories such as vehicle type,
-            road condition and time of day. Highlighted critical hotspots to help 
-            improve transportation safety and reduce accident impact.
-        </p>
-        <a href="#" class="project-link">GitHub Repo</a>
-    </div>
 
-</div>
+
+
+
+
 
 
 
