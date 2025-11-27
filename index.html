@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future CSE Engineer | Portfolio</title>
+    <style>
+        /* Modern Dark Theme CSS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0f172a; /* Deep Blue-Black */
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(90deg, #1e293b, #0f172a);
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 3px solid #3b82f6;
+        }
+        h1 { margin: 0; font-size: 2.5rem; color: #fff; }
+        p.subtitle { color: #94a3b8; font-size: 1.2rem; }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section-title {
+            color: #3b82f6; /* Accent Blue */
+            border-bottom: 2px solid #334155;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            border: 1px solid #334155;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+        .card h3 { margin-top: 0; }
+        
+        /* Language Tags */
+        .tag {
+            display: inline-block;
+            background: #334155;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            color: #60a5fa;
+        }
+
+        /* Contact Button */
+        .btn {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .btn:hover { background-color: #2563eb; }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>[তোমার নাম এখানে লেখো]</h1>
+        <p class="subtitle">CSE Student @ Sharda University | C/C++ Enthusiast</p>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title">About Me</h2>
+        <p>
+            হ্যালো! আমি একজন কম্পিউটার সায়েন্সের ছাত্র। আমি টেকনোলজি এবং কোডিং নিয়ে কাজ করতে ভালোবাসি। 
+            বর্তমানে আমি <strong>C/C++</strong> প্রোগ্রামিং এবং ডেটা স্ট্রাকচার শিখছি। ভবিষ্যতে আমি সফটওয়্যার ইঞ্জিনিয়ারিংয়ে ক্যারিয়ার গড়তে চাই।
+        </p>
+
+        <h2 class="section-title">My Projects</h2>
+        <div class="project-grid">
+            
+            <div class="card">
+                <h3>Library Management System</h3>
+                <div>
+                    <span class="tag">C Language</span>
+                    <span class="tag">File Handling</span>
+                </div>
+                <p>একটি সি প্রোগ্রাম যা লাইব্রেরির বই ম্যানেজ করতে পারে। এতে বই অ্যাড, রিমুভ এবং সার্চ করার ফিচার আছে।</p>
+            </div>
+
+            <div class="card">
+                <h3>Number Guessing Game</h3>
+                <div>
+                    <span class="tag">C++</span>
+                    <span class="tag">Logic</span>
+                </div>
+                <p>একটি সিম্পল গেম যেখানে কম্পিউটার একটি সংখ্যা ভাবে এবং ইউজারকে সেটি গেস করতে হয়।</p>
+            </div>
+
+            <div class="card">
+                <h3>Portfolio Website</h3>
+                <div>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                </div>
+                <p>আমার নিজের পোর্টফোলিও ওয়েবসাইট যা GitHub Student Pack ব্যবহার করে তৈরি করা হয়েছে।</p>
+            </div>
+
+        </div>
+
+        <h2 class="section-title">Contact</h2>
+        <p>আমার সাথে প্রজেক্ট বা টেকনোলজি নিয়ে কথা বলতে চাইলে ইমেইল করতে পারো।</p>
+        <a href="mailto:contact@yourname.me" class="btn">Send Email</a>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2025 [তোমার নাম]. Built with GitHub Student Pack.</p>
+    </footer>
+
+</body>
+</html>
