@@ -201,11 +201,15 @@ I am enthusiastic about collaborating with like-minded individuals and contribut
     </div>
 
     <footer>
-      <footer style="background-color: #0f172a; padding: 20px; text-align: center; border-top: 1px solid #334155; margin-top: 50px;">
-    <p style="color: #94a3b8;">Made by <strong>Proshanto Kumar Roy</strong> </p>
-    <p style="font-size: 0.8rem; color: #64748b;">&copy; 2025 All Rights Reserved.</p>
+    <p>Made by <strong>Proshanto Kumar Roy</strong></p>
+    <p style="font-size: 0.8rem; color: #64748b;">
+        &copy; <span id="year"></span> All Rights Reserved.
+    </p>
 </footer>
-    </footer>
+
+<script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
