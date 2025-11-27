@@ -136,79 +136,64 @@ Throughout my academic journey, I have cultivated a growth mindset, embracing ch
 I am enthusiastic about collaborating with like-minded individuals and contributing to meaningful projects that drive innovation and create real-world impact. With a focus on clean code, creative problem solving and effective communication, I aim to build a strong foundation for a successful career in the tech industry. Open to new ideas and experiences, I am excited to connect, learn and grow with professionals across various technology domains.
         </p>
 
+<style>
+    /* এই স্টাইলটুকু শুধুমাত্র এই সেকশনের জন্য */
+    .my-skills-container {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 20px 0;
+        max-width: 100%;
+    }
 
-    <title>Skills Section</title>
-    <style>
-        /* ফন্ট এবং বেসিক স্টাইল */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 40px;
-            background-color: #f9f9f9;
-        }
+    .my-section-title {
+        color: #333;
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+        border-bottom: 3px solid #007bff; /* নীল রঙের আন্ডারলাইন */
+        display: inline-block;
+    }
 
-        /* সেকশন কন্টেইনার */
-        .skills-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
+    .my-skills-wrapper {
+        display: flex;
+        flex-wrap: wrap; /* জায়গা না হলে নিচে নামবে */
+        gap: 10px; /* এক ট্যাগ থেকে আরেক ট্যাগের দূরত্ব */
+    }
 
-        /* শিরোনাম বা টাইটেল স্টাইল */
-        .section-title {
-            color: #2c3e50;
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #3498db; /* নীল আন্ডারলাইন */
-            display: inline-block;
-        }
+    .my-tag {
+        background-color: #f3f4f6;
+        color: #374151;
+        padding: 8px 16px;
+        border-radius: 50px; /* গোল বা ক্যাপসুল শেপ */
+        font-size: 0.95rem;
+        font-weight: 500;
+        border: 1px solid #e5e7eb;
+        transition: all 0.3s ease;
+        cursor: default;
+    }
 
-        /* স্কিল র‍্যাপার (ফ্লেক্সবক্স ব্যবহার করা হয়েছে) */
-        .skills-wrapper {
-            display: flex;
-            flex-wrap: wrap; /* জায়গা না হলে পরের লাইনে যাবে */
-            gap: 12px; /* প্রতিটি ট্যাগের মাঝের গ্যাপ */
-        }
+    /* মাউস নিলে যা হবে */
+    .my-tag:hover {
+        background-color: #007bff; /* নীল ব্যাকগ্রাউন্ড */
+        color: white;
+        border-color: #007bff;
+        transform: translateY(-2px); /* হালকা উপরে উঠবে */
+        box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+    }
+</style>
 
-        /* ট্যাগের ডিজাইন */
-        .tag {
-            background-color: #f0f2f5;
-            color: #444;
-            padding: 10px 20px;
-            border-radius: 50px; /* ক্যাপসুল বা পিল শেপ */
-            font-size: 1rem;
-            font-weight: 500;
-            border: 1px solid #e1e4e8;
-            transition: all 0.3s ease; /* স্মুথ অ্যানিমেশন */
-            cursor: default;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        /* হোভার এফেক্ট (মাউস নিলে যা হবে) */
-        .tag:hover {
-            background-color: #3498db; /* নীল ব্যাকগ্রাউন্ড */
-            color: white;
-            transform: translateY(-3px); /* একটু উপরে উঠবে */
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-            border-color: #3498db;
-        }
-    </style>
-
-    <div class="skills-container">
-        <h2 class="section-title">Skills & Tools</h2>
-        
-        <div class="skills-wrapper">
-            <span class="tag">Python (Pandas, NumPy)</span>
-            <span class="tag">SQL (MySQL, PostgreSQL)</span>
-            <span class="tag">Power BI / Excel Dashboarding</span>
-            <span class="tag">Data Cleaning & ETL</span>
-            <span class="tag">Statistics & Problem Solving</span>
-        </div>
+<div class="my-skills-container">
+    <h2 class="my-section-title">Skills & Tools</h2>
+    
+    <div class="my-skills-wrapper">
+        <span class="my-tag">Python (Pandas, NumPy, Matplotlib)</span>
+        <span class="my-tag">SQL (MySQL, PostgreSQL)</span>
+        <span class="my-tag">Power BI / Excel Dashboarding</span>
+        <span class="my-tag">Data Cleaning & ETL</span>
+        <span class="my-tag">Statistics & Problem Solving</span>
     </div>
+</div>
+    
+
 
        <h2 class="section-title">What I Do</h2>
 <div class="project-grid">
