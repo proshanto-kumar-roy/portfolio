@@ -234,7 +234,117 @@ I am enthusiastic about collaborating with like-minded individuals and contribut
 
 </div>
 
-        <h2 class="section-title">My Projects</h2>
+        
+<style>
+    /* কার্ডগুলো পাশাপাশি রাখার জন্য গ্রিড সিস্টেম */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* রেস্পন্সিভ গ্রিড */
+        gap: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 20px 0;
+    }
+
+    /* প্রজেক্ট কার্ডের মেইন ডিজাইন */
+    .project-card {
+        background-color: rgba(255, 255, 255, 0.05); /* হালকা স্বচ্ছ কালো */
+        border: 1px solid rgba(255, 255, 255, 0.1); /* খুব হালকা বর্ডার */
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* কার্ডে মাউস নিলে যা হবে */
+    .project-card:hover {
+        border-color: #007bff; /* নীল বর্ডার */
+        transform: translateY(-5px); /* একটু উপরে উঠবে */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* টাইটেল ডিজাইন */
+    .project-card h3 {
+        color: #fff;
+        font-size: 1.4rem;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    /* ডেসক্রিপশন ডিজাইন */
+    .project-card p {
+        color: #cccccc; /* হালকা ধূসর যাতে কালোতে পড়া যায় */
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    /* ট্যাগ বা টেকনোলজিগুলোর র‍্যাপার */
+    .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+
+    /* ছোট ট্যাগগুলোর ডিজাইন */
+    .tech-tag {
+        font-size: 0.75rem;
+        background-color: rgba(0, 123, 255, 0.15); /* হালকা নীল আভা */
+        color: #61dafb; /* উজ্জ্বল নীল টেক্সট */
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+
+    /* GitHub লিংক বা বাটন ডিজাইন */
+    .project-link {
+        text-decoration: none;
+        color: #fff;
+        background-color: #007bff;
+        padding: 10px 15px;
+        border-radius: 6px;
+        text-align: center;
+        font-weight: bold;
+        transition: background 0.3s;
+        align-self: flex-start; /* বামে রাখবে */
+        font-size: 0.9rem;
+    }
+
+    .project-link:hover {
+        background-color: #0056b3; /* হোভার করলে গাঢ় নীল */
+    }
+</style>
+
+<div class="projects-grid">
+    
+    <div class="project-card">
+        <h3>Retail Sales Performance Dashboard</h3>
+        
+        <div class="tech-stack">
+            <span class="tech-tag">Power BI</span>
+            <span class="tech-tag">Data Modeling</span>
+            <span class="tech-tag">DAX</span>
+        </div>
+
+        <p>
+            Designed an interactive business dashboard analyzing revenue, profit margin
+            and regional performance. Identified top 10 profitable products, seasonal 
+            trends and key customer segments to support business decision-making.
+        </p>
+        
+        <a href="#" class="project-link">View on GitHub</a>
+    </div>
+
+    </div>
+
+
+
+
+
+
+<h2 class="section-title">My Projects</h2>
         <div class="project-grid">
             
             <div class="card">
