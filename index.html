@@ -136,6 +136,8 @@ Throughout my academic journey, I have cultivated a growth mindset, embracing ch
 I am enthusiastic about collaborating with like-minded individuals and contributing to meaningful projects that drive innovation and create real-world impact. With a focus on clean code, creative problem solving and effective communication, I aim to build a strong foundation for a successful career in the tech industry. Open to new ideas and experiences, I am excited to connect, learn and grow with professionals across various technology domains.
         </p>
 
+
+
 <style>
     .my-skills-container {
         /* ফন্ট তোমার ওয়েবসাইটের ডিফল্ট ফন্টই পাবে */
@@ -197,6 +199,7 @@ I am enthusiastic about collaborating with like-minded individuals and contribut
     
 
 
+
        <h2 class="section-title">What I Do</h2>
 <div class="project-grid">
     
@@ -236,20 +239,20 @@ I am enthusiastic about collaborating with like-minded individuals and contribut
 
         
 
+
+
 <style>
-    /* কার্ডগুলো পাশাপাশি রাখার জন্য গ্রিড সিস্টেম */
     .projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* রেস্পন্সিভ গ্রিড */
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px; /* কার্ডগুলোর মাঝের দূরত্ব */
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         padding: 20px 0;
     }
 
-    /* প্রজেক্ট কার্ডের মেইন ডিজাইন */
     .project-card {
-        background-color: rgba(255, 255, 255, 0.05); /* হালকা স্বচ্ছ কালো */
-        border: 1px solid rgba(255, 255, 255, 0.1); /* খুব হালকা বর্ডার */
+        background-color: rgba(255, 255, 255, 0.05); /* ডার্ক থিম ব্যাকগ্রাউন্ড */
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 12px;
         padding: 25px;
         transition: all 0.3s ease;
@@ -258,30 +261,26 @@ I am enthusiastic about collaborating with like-minded individuals and contribut
         justify-content: space-between;
     }
 
-    /* কার্ডে মাউস নিলে যা হবে */
     .project-card:hover {
-        border-color: #007bff; /* নীল বর্ডার */
-        transform: translateY(-5px); /* একটু উপরে উঠবে */
+        border-color: #007bff;
+        transform: translateY(-5px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
-    /* টাইটেল ডিজাইন */
     .project-card h3 {
         color: #fff;
-        font-size: 1.4rem;
+        font-size: 1.35rem;
         margin-top: 0;
         margin-bottom: 15px;
     }
 
-    /* ডেসক্রিপশন ডিজাইন */
     .project-card p {
-        color: #cccccc; /* হালকা ধূসর যাতে কালোতে পড়া যায় */
+        color: #cccccc;
         font-size: 0.95rem;
         line-height: 1.6;
         margin-bottom: 20px;
     }
 
-    /* ট্যাগ বা টেকনোলজিগুলোর র‍্যাপার */
     .tech-stack {
         display: flex;
         flex-wrap: wrap;
@@ -289,17 +288,15 @@ I am enthusiastic about collaborating with like-minded individuals and contribut
         margin-bottom: 15px;
     }
 
-    /* ছোট ট্যাগগুলোর ডিজাইন */
     .tech-tag {
         font-size: 0.75rem;
-        background-color: rgba(0, 123, 255, 0.15); /* হালকা নীল আভা */
-        color: #61dafb; /* উজ্জ্বল নীল টেক্সট */
+        background-color: rgba(0, 123, 255, 0.15);
+        color: #61dafb;
         padding: 4px 10px;
         border-radius: 4px;
         font-weight: 500;
     }
 
-    /* GitHub লিংক বা বাটন ডিজাইন */
     .project-link {
         text-decoration: none;
         color: #fff;
@@ -309,43 +306,78 @@ I am enthusiastic about collaborating with like-minded individuals and contribut
         text-align: center;
         font-weight: bold;
         transition: background 0.3s;
-        align-self: flex-start; /* বামে রাখবে */
+        align-self: flex-start;
         font-size: 0.9rem;
     }
 
     .project-link:hover {
-        background-color: #0056b3; /* হোভার করলে গাঢ় নীল */
+        background-color: #0056b3;
     }
 </style>
- <h2 class="section-title">My Projet</h2>
+
 <div class="projects-grid">
     
     <div class="project-card">
         <h3>Retail Sales Performance Dashboard</h3>
-        
         <div class="tech-stack">
             <span class="tech-tag">Power BI</span>
             <span class="tech-tag">Data Modeling</span>
             <span class="tech-tag">DAX</span>
         </div>
-
         <p>
             Designed an interactive business dashboard analyzing revenue, profit margin
             and regional performance. Identified top 10 profitable products, seasonal 
             trends and key customer segments to support business decision-making.
         </p>
-        
-        <a href="#" class="project-link">View on GitHub</a>
+        <a href="#" class="project-link">GitHub Repo</a>
     </div>
 
+    <div class="project-card">
+        <h3>Customer Segmentation using RFM Analysis</h3>
+        <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">Machine Learning</span>
+        </div>
+        <p>
+            Performed RFM-based clustering to classify customers into groups such as
+            Loyal, At-Risk and New Users. Extracted actionable insights that can 
+            improve retention and increase marketing efficiency.
+        </p>
+        <a href="#" class="project-link">GitHub Repo</a>
     </div>
 
+    <div class="project-card">
+        <h3>Movie Rating Prediction Model</h3>
+        <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Scikit-Learn</span>
+            <span class="tech-tag">EDA</span>
+        </div>
+        <p>
+            Built a regression model to predict IMDB ratings using feature engineering
+            and exploratory data analysis. Achieved significant accuracy improvement
+            through correlation analysis and data preprocessing.
+        </p>
+        <a href="#" class="project-link">GitHub Repo</a>
+    </div>
 
+    <div class="project-card">
+        <h3>Road Accident Data Insights & Visualization</h3>
+        <div class="tech-stack">
+            <span class="tech-tag">Power BI</span>
+            <span class="tech-tag">Excel</span>
+            <span class="tech-tag">Data Cleaning</span>
+        </div>
+        <p>
+            Analyzed road accident trends across categories such as vehicle type,
+            road condition and time of day. Highlighted critical hotspots to help 
+            improve transportation safety and reduce accident impact.
+        </p>
+        <a href="#" class="project-link">GitHub Repo</a>
+    </div>
 
-
-
-
-
+</div>
 
 
 
