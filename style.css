@@ -293,6 +293,8 @@ footer {
   font-family: monospace;
   font-size: 15px;
   color: #e5e7eb;
+
+  animation: float 3.5s ease-in-out infinite;
 }
 
 .key {
@@ -313,4 +315,16 @@ footer {
 .hireable {
   color: #22c55e;
   font-weight: bold;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
