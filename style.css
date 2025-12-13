@@ -1,38 +1,38 @@
-/* ১. গ্লোবাল স্টাইল */
+/* --- Basic Reset --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background-color: #0f172a; /* দর্শনের সাইটের মতো ডার্ক ব্লু */
-  color: #ffffff;
-  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  /* Darshan-এর মতো গাঢ় ব্যাকগ্রাউন্ড এবং ওপরের গ্লো */
+  background-color: #0b0b13;
+  background-image: radial-gradient(
+    circle at 50% -10%,
+    #2d1b69 0%,
+    transparent 40%
+  );
+  background-repeat: no-repeat;
+  color: white;
+  min-height: 100vh;
 }
 
-/* ২. নেভিগেশন বার */
-nav {
+/* --- Navbar Styling --- */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 10%;
-  background: rgba(15, 23, 42, 0.9);
-  backdrop-filter: blur(10px);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 50px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 .logo {
-  font-size: 24px;
+  color: #4ade80; /* হালকা সবুজ লোগো */
   font-weight: 700;
-  color: #22c55e; /* নামের সবুজ রঙ */
-  text-decoration: none;
-  letter-spacing: 1px;
+  font-size: 1.2rem;
 }
 
 .nav-links {
@@ -42,182 +42,187 @@ nav {
 }
 
 .nav-links a {
-  color: #e2e8f0;
   text-decoration: none;
-  font-weight: 500;
+  color: #cbd5e1;
+  font-size: 0.9rem;
   transition: 0.3s;
-  font-size: 16px;
 }
 
-.nav-links a:hover {
-  color: #22c55e;
+.nav-links a:hover,
+.nav-links a.active {
+  color: white;
+  font-weight: 600;
 }
 
-/* ৩. হিরো সেকশন */
-.hero {
+/* --- Hero Section Styling --- */
+.hero-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 100vh; /* পুরো স্ক্রিন জুড়েই থাকবে */
-  padding: 0 10%;
-  padding-top: 80px;
-  background: radial-gradient(circle at 20% 50%, #1e293b 0%, #0f172a 100%);
+  max-width: 1200px;
+  margin: 40px auto; /* ওপর থেকে একটু গ্যাপ */
+  padding: 0 30px;
+  flex-wrap: wrap; /* ছোট স্ক্রিনে যাতে ভেঙে নিচে নামে */
 }
 
+/* --- Left Side Text --- */
 .hero-text {
   flex: 1;
+  min-width: 350px;
 }
 
-.hero-text h3 {
-  font-size: 32px;
-  font-weight: 600;
-  color: #e2e8f0;
-}
-
-.hero-text h1 {
-  font-size: 50px;
-  font-weight: 800;
-  margin: 10px 0;
-  line-height: 1.2;
-}
-
-.hero-text .name-highlight {
-  background: linear-gradient(
-    to right,
-    #a855f7,
-    #ec4899
-  ); /* গ্রেডিয়েন্ট টেক্সট */
+/* "Hi, I'm" - কালারফুল গ্রেডিয়েন্ট টেক্সট */
+.greeting {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #a855f7, #ec4899); /* বেগুনি ও গোলাপি */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.hero-text p {
-  color: #94a3b8;
-  font-size: 18px;
-  margin-bottom: 30px;
-  max-width: 550px;
+/* নাম - সাদা রঙের */
+.name {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-top: 5px;
+}
+
+.role {
+  color: #4ade80; /* সবুজ রঙের টাইটেল */
+  font-size: 1.1rem;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.description {
+  color: #94a3b8; /* হালকা ছাই রঙ */
+  margin-top: 20px;
   line-height: 1.6;
-}
-
-.btn {
-  padding: 14px 35px;
-  background: linear-gradient(90deg, #a855f7, #ec4899);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
-  transition: transform 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-/* ৪. কোড বক্স ডিজাইন */
-.code-box-container {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  perspective: 1000px;
-}
-
-.code-box {
-  background: #1e293b;
-  border: 1px solid #334155;
-  border-radius: 12px;
-  width: 100%;
   max-width: 500px;
-  padding: 25px;
-  box-shadow: 0 0 25px rgba(168, 85, 247, 0.15);
-  font-family: "Fira Code", monospace;
+  font-size: 0.95rem;
+}
+
+/* সোশ্যাল আইকন - সবুজ (Darshan Style) */
+.social-icons {
+  margin: 30px 0;
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: #4ade80; /* হুবহু ওই সবুজ রঙ */
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+  color: #22c55e;
+}
+
+/* বাটন ডিজাইন */
+.btn-resume {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(90deg, #ec4899, #8b5cf6); /* পিঙ্ক-বেগুনি বাটন */
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+  transition: 0.3s;
+}
+
+.btn-resume:hover {
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+}
+
+/* --- Right Side Code Window --- */
+.code-window {
+  flex: 1;
+  min-width: 400px;
+  background: #11111b; /* কোড বক্সের ব্যাকগ্রাউন্ড */
+  border: 1px solid #2d2d3a;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 60px rgba(124, 58, 237, 0.15); /* পেছনের হালকা গ্লো */
+  margin-top: 20px;
   position: relative;
-  /* একটু টিল্ট ইফেক্ট (ঐচ্ছিক) */
-  transform: rotateY(-5deg) rotateX(5deg);
-  transition: transform 0.3s ease;
+  left: 20px; /* একটু ডান দিকে চাপানোর জন্য */
 }
 
-.code-box:hover {
-  transform: rotateY(0deg) rotateX(0deg); /* মাউস নিলে সোজা হবে */
-}
-
-/* উইন্ডো কন্ট্রোলস (Mac style) */
-.window-controls {
+/* উইন্ডো বাটন (লাল, হলুদ, সবুজ) */
+.window-header {
   display: flex;
   gap: 8px;
   margin-bottom: 20px;
 }
-
 .dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
 }
-
 .red {
-  background-color: #ff5f56;
+  background: #ff5f56;
 }
 .yellow {
-  background-color: #ffbd2e;
+  background: #ffbd2e;
 }
 .green {
-  background-color: #27c93f;
+  background: #27c93f;
 }
 
-/* কোড কালারিং (Syntax Highlighting) */
-pre {
-  color: #e2e8f0;
-  font-size: 15px;
-  line-height: 1.6;
-  overflow-x: auto;
+/* কোড সিনট্যাক্স হাইলাইটিং (Darshan Style) */
+.code-body pre {
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .keyword {
-  color: #ff79c6;
-  font-weight: bold;
-} /* const, return, function */
+  color: #d946ef;
+} /* const, function, return - পিঙ্ক/বেগুনি */
 .variable {
-  color: #f1fa8c;
-} /* Proshanto */
-.property {
-  color: #8be9fd;
-} /* keys like fullName */
+  color: #facc15;
+} /* Proshanto - হলুদ */
+.operator {
+  color: #ffffff;
+} /* = */
+.key {
+  color: #ffffff;
+} /* fullName, location - সাদা */
 .string {
-  color: #50fa7b;
-} /* values inside quotes */
+  color: #4ade80;
+} /* 'India' - সবুজ */
 .boolean {
-  color: #bd93f9;
-} /* true/false */
+  color: #facc15;
+} /* true - হলুদ */
 
-/* ৫. রেসপন্সিভ ডিজাইন (মোবাইলের জন্য) */
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column-reverse; /* মোবাইলে কোড বক্স উপরে যাবে, টেক্সট নিচে */
-    justify-content: center;
+/* রেসপন্সিভ ডিজাইন (মোবাইলের জন্য) */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column-reverse; /* মোবাইলে কোড নিচে যাবে */
+    padding: 20px;
     text-align: center;
-    padding: 100px 5% 50px 5%;
-    gap: 50px;
   }
-
-  .hero-text h1 {
-    font-size: 36px;
+  .code-window {
+    min-width: 100%;
+    left: 0;
+    margin-bottom: 40px;
   }
-
-  .code-box-container {
+  .social-icons {
     justify-content: center;
-    width: 100%;
   }
-
-  .code-box {
-    width: 100%;
-    transform: none; /* মোবাইলে টিল্ট বন্ধ */
+  .navbar {
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
   }
-
-  .nav-links {
-    display: none; /* মোবাইলে মেনু আপাতত হাইড (পরে হামবার্গার মেনু যোগ করা যাবে) */
+  .name {
+    font-size: 2.5rem;
   }
 }
