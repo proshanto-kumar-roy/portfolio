@@ -323,13 +323,28 @@ code {
   }
 }
 
-/* কার্সারের ডিজাইন */
 .cursor {
   display: inline-block;
-  width: 3px; /* কার্সার কতটা মোটা হবে */
-  height: 1em; /* লেখার সাইজ অনুযায়ী লম্বা হবে */
-  background-color: #ec4899; /* গোলাপি রং (আপনার থিম অনুযায়ী) */
-  margin-left: 5px; /* লেখা থেকে একটু দূরে */
-  animation: blink 1s step-end infinite; /* ব্লিঙ্ক করার স্পিড */
-  vertical-align: text-bottom; /* লাইন বরাবর ঠিকঠাক বসবে */
+
+  /* সাইজ বড় করার জন্য */
+  width: 5px; /* আগের চেয়ে মোটা (3px -> 5px) */
+  height: 1.2em; /* লেখার চেয়ে একটু লম্বা */
+
+  /* রঙ সাদা করার জন্য */
+  background-color: #ffffff;
+
+  margin-left: 5px;
+  animation: blink 1s step-end infinite;
+  vertical-align: sub; /* লাইন বরাবর ঠিকভাবে বসার জন্য */
+}
+
+/* অ্যানিমেশন একই থাকবে */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
