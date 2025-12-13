@@ -458,8 +458,59 @@ code {
   font-size: 0.9rem;
 }
 
-/* আপনার গিটহাব আইকন বা ইমেজের ক্লাস নাম যেটা আছে, সেটা ব্যবহার করুন */
+/* --- ১. GitHub আইকন ফিক্স (সাদা রং) --- */
+/* FontAwesome এবং Devicon দুটোর জন্যই */
 .fa-github,
-img[alt="GitHub"] {
-  filter: brightness(0) invert(1) !important;
+.devicon-github-original {
+  color: #ffffff !important; /* জোর করে সাদা করা হচ্ছে */
+}
+
+/* --- ২. গ্লোয়িং সেকশন হেডার (Skills, About, Projects এর জন্য) --- */
+.section-header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  margin: 60px 0 40px; /* উপরে নিচে ফাঁকা */
+}
+
+/* পেছনের আবছা লাইন */
+.section-header-wrapper .line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.5) 0%,
+    transparent 80%
+  );
+  z-index: 1;
+}
+
+/* মাঝখানের বটন স্টাইল টাইটেল */
+.section-pill {
+  position: relative;
+  z-index: 2;
+  background: #0f172a; /* গাঢ় নীল ব্যাকগ্রাউন্ড */
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 30px;
+  border-radius: 50px;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3); /* গ্লো এফেক্ট */
+  text-transform: capitalize;
+}
+
+/* --- ৩. About Me সেকশন ফিক্স --- */
+.about-text .gradient-text {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.about-text h2 {
+  font-size: 32px;
+  color: #64ffda; /* Who am I এর বাকি টেক্সট নীলচে */
+  margin-bottom: 20px;
 }
