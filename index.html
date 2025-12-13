@@ -1,367 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta property="og:title" content="Proshanto Kumar Roy | Aspiring Data Analyst">
-<meta property="og:description" content="Welcome to my portfolio! Check out my IoT projects and C++ skills.">
-<meta property="og:image" content="https://proshantokumarroy.me/profile.jpg">
-<meta property="og:url" content="https://proshantokumarroy.me">
-<meta property="og:type" content="website">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proshanto Kumar Roy | Software Engineering Student</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <h2>Proshanto</h2>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-    <meta charset="UTF-8">
-    <meta name="google-site-verification" content="KCuV89TD5jRe1eR8SCQY9cdearHKU4AK7KWc1Ksmue4" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <title>Proshanto Kumar Roy | Portfolio</title>
-    <link rel="icon" href="profile.jpg" type="image/x-icon">
-    <style>
-        html {
-    scroll-behavior: smooth;
-}
-
-        /* Modern Dark Theme CSS */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #0f172a; /* Deep Blue-Black */
-            color: #e2e8f0;
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(90deg, #1e293b, #0f172a);
-            padding: 3rem 0;
-            text-align: center;
-            border-bottom: 3px solid #3b82f6;
-        }
-        h1 { margin: 0; font-size: 2.8rem; color: #fff; font-weight: 700; text-transform: uppercase; }
-        p.subtitle { color: #94a3b8; font-size: 1.1rem; margin-top: 10px; max-width: 800px; margin-left: auto; margin-right: auto; }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .section-title {
-            color: #3b82f6;
-            border-bottom: 2px solid #334155;
-            padding-bottom: 10px;
-            margin-top: 50px;
-            font-size: 1.8rem;
-        }
-
-        /* Project Cards */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-        .card {
-            background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            border: 1px solid #334155;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        .card:hover {
-            transform: translateY(-7px);
-            border-color: #3b82f6;
-        }
-        .card h3 { margin-top: 0; color: #f8fafc; }
-        
-        /* Language Tags */
-        .tag {
-            display: inline-block;
-            background: #334155;
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            margin-right: 5px;
-            margin-bottom: 10px;
-            color: #60a5fa;
-            font-weight: 600;
-        }
-
-        /* Contact Button */
-        .btn {
-            display: inline-block;
-            background-color: #3b82f6;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-top: 20px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .btn:hover { background-color: #2563eb; }
-        
-        footer {
-            text-align: center;
-            padding: 30px;
-            margin-top: 60px;
-            border-top: 1px solid #334155;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-    </style>
-</head>
-<body>
-     <header>
-    <img src="profile.jpg" alt="Profile" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #3b82f6; margin-bottom: 15px;">
-    
-    <h1>Proshanto Kumar Roy</h1>
-    <p class="subtitle">...</p>
-</header>
-
-    <header>
-        <h1>PROSHANTO KUMAR ROY</h1>
-        <p class="subtitle"> Software Engineering Student | CSE @ Sharda University | Building High-Efficiency Systems | Helping Solve Computational Problems with Efficient C++ Programming | GitHub Contributor </p>
-    </header>
-
-    
-
-    <div class="container">
-        
-        <h2 class="section-title">About Me</h2>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Hi, I'm <span>Proshanto</span></h1>
+        <h3>Software Engineering Student | C / C++ Focused</h3>
         <p>
-           My name is Proshanto Kumar Roy. I am a dedicated and ambitious B.Tech Computer Science student at Sharda University with a strong foundation in programming and a passion for exploring cutting-edge technologies. Currently, I am actively developing my skills in web development, programming languages and technology innovation, eager to transform theoretical knowledge into practical solutions.
-<br><br>
-Throughout my academic journey, I have cultivated a growth mindset, embracing challenges and continuously seeking opportunities to learn and improve. My goal is to become a versatile technology professional capable of adapting to the ever-evolving tech landscape.
-<br><br>
-I am enthusiastic about collaborating with like-minded individuals and contributing to meaningful projects that drive innovation and create real-world impact. With a focus on clean code, creative problem solving and effective communication, I aim to build a strong foundation for a successful career in the tech industry. Open to new ideas and experiences, I am excited to connect, learn and grow with professionals across various technology domains.
+          I build logic-driven programs using C and C++, with a focus on clean
+          and structured code.
         </p>
 
+        <div class="hero-buttons">
+          <a href="resume.pdf" class="btn">Get Resume</a>
+          <a
+            href="https://github.com/proshanto-kumar-roy"
+            target="_blank"
+            class="btn-outline"
+            >GitHub</a
+          >
+        </div>
+      </div>
 
+      <div class="hero-right">
+        <pre>
+const programmer = {
+  name: "Proshanto Kumar Roy",
+  role: "Software Engineering Student",
+  skills: ["C", "C++", "Git", "HTML", "JavaScript"],
+  location: "Greater Noida, India",
+  hireable: true
+};
+    </pre
+        >
+      </div>
+    </section>
 
-<style>
-    .my-skills-container {
-        /* ফন্ট তোমার ওয়েবসাইটের ডিফল্ট ফন্টই পাবে */
-        padding: 20px 0;
-        max-width: 100%;
-    }
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>Who am I?</h2>
+      <p>
+        I am a Software Engineering student currently pursuing my degree in
+        Computer Science and Engineering at Sharda University. I have a strong
+        interest in problem-solving and system-oriented programming,
+        particularly using C and C++.
+      </p>
+      <p>
+        I focus on writing clean, structured, and efficient code while
+        continuously strengthening my understanding of core programming concepts
+        and computational thinking.
+      </p>
+      <p>
+        Alongside my academic journey, I actively build and share projects on
+        GitHub, using it as a platform to document my learning and improve
+        version control skills.
+      </p>
+    </section>
 
-    .my-section-title {
-        color: #3399ff; /* টাইটেল এখন সাদা হবে */
-        font-size: 1.8rem;
-        margin-bottom: 25px;
-        padding-bottom: 10px;
-        border-bottom: 3px solid #007bff; /* নীল আন্ডারলাইন */
-        display: inline-block;
-        font-weight: bold;
-    }
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <h2>Skills & Technologies</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Programming Languages</h3>
+          <p>C</p>
+          <p>C++</p>
+          <p>JavaScript</p>
+        </div>
 
-    .my-skills-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px; /* গ্যাপ একটু বাড়ানো হলো */
-    }
+        <div class="card">
+          <h3>Web Technologies</h3>
+          <p>HTML</p>
+          <p>CSS</p>
+        </div>
 
-    .my-tag {
-        /* ডার্ক ব্যাকগ্রাউন্ড (কার্ডের মতো) */
-        background-color: rgba(255, 255, 255, 0.05); 
-        color: #e2e8f0; /* লেখার রং হালকা সাদা */
-        padding: 10px 20px;
-        border-radius: 50px;
-        font-size: 0.95rem;
-        font-weight: 500;
-        /* বর্ডার হালকা দেখা যাবে */
-        border: 1px solid rgba(255, 255, 255, 0.2); 
-        transition: all 0.3s ease;
-        cursor: default;
-    }
+        <div class="card">
+          <h3>Tools</h3>
+          <p>Git</p>
+          <p>GitHub</p>
+        </div>
+      </div>
+    </section>
 
-    /* মাউস নিলে যা হবে (নীল গ্লো) */
-    .my-tag:hover {
-        background-color: rgba(0, 123, 255, 0.2); /* হালকা নীল ব্যাকগ্রাউন্ড */
-        border-color: #007bff; /* বর্ডার নীল হবে */
-        color: #ffffff; /* লেখা পুরো সাদা হবে */
-        transform: translateY(-3px);
-        box-shadow: 0 0 10px rgba(0, 123, 255, 0.4); /* গ্লো এফেক্ট */
-    }
-</style>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Student Result Management System</h3>
+          <p>
+            A C++ based console application designed to manage and organize
+            student academic records efficiently.
+          </p>
+          <span class="tag">C++</span>
+          <p class="repo">GitHub: N/A</p>
+        </div>
 
-<div class="my-skills-container">
-    <h2 class="my-section-title">Skills & Tools</h2>
-    
-    <div class="my-skills-wrapper">
-        <span class="my-tag">C++</span>
-    </div>
-</div>
-    
+        <div class="card">
+          <h3>Personal Portfolio Website</h3>
+          <p>
+            A responsive personal portfolio website built using HTML, CSS, and
+            JavaScript to showcase skills and projects.
+          </p>
+          <span class="tag">HTML • CSS • JavaScript</span>
+          <p class="repo">GitHub: N/A</p>
+        </div>
+      </div>
+    </section>
 
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Let’s Connect</h2>
+      <p>
+        Interested in collaboration, projects, or opportunities? Feel free to
+        reach out — I’ll respond as soon as possible.
+      </p>
 
-
-
-
-<style>
-    /* গ্রিড লেআউট: পাশাপাশি ৩টি কার্ড দেখানোর জন্য */
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        padding: 20px 0;
-    }
-
-    /* কার্ডের ডিজাইন */
-    .service-card {
-        background-color: rgba(255, 255, 255, 0.05); /* ডার্ক ট্রান্সপারেন্ট ব্যাকগ্রাউন্ড */
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 35px 25px;
-        text-align: center; /* লেখা মাঝখানে থাকবে */
-        transition: all 0.3s ease;
-    }
-
-    /* মাউস নিলে যা হবে */
-    .service-card:hover {
-        border-color: #3b82f6; /* তোমার পছন্দের নীল রং */
-        transform: translateY(-5px); /* উপরে উঠবে */
-        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); /* নীল আভা/গ্লো */
-        background-color: rgba(255, 255, 255, 0.08);
-    }
-
-    /* ইমোজি বা আইকনের সাইজ */
-    .service-icon {
-        font-size: 3rem;
-        margin-bottom: 15px;
-        display: inline-block;
-    }
-
-    /* টাইটেল ডিজাইন */
-    .service-card h3 {
-        color: #3b82f6; /* লাইট ব্লু */
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        font-weight: 600;
-    }
-
-    /* প্যারাগ্রাফ বা ডেসক্রিপশন */
-    .service-card p {
-        color: #d1d5db; /* হালকা ধূসর টেক্সট */
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-</style>
-
-
-
-<style>
-    .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px; /* কার্ডগুলোর মাঝের দূরত্ব */
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        padding: 20px 0;
-    }
-
-    .project-card {
-        background-color: rgba(255, 255, 255, 0.05); /* ডার্ক থিম ব্যাকগ্রাউন্ড */
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 25px;
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .project-card:hover {
-        border-color: #007bff;
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .project-card h3 {
-        color: #fff;
-        font-size: 1.35rem;
-        margin-top: 0;
-        margin-bottom: 15px;
-    }
-
-    .project-card p {
-        color: #cccccc;
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
-
-    .tech-stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 15px;
-    }
-
-    .tech-tag {
-        font-size: 0.75rem;
-        background-color: rgba(0, 123, 255, 0.15);
-        color: #61dafb;
-        padding: 4px 10px;
-        border-radius: 4px;
-        font-weight: 500;
-    }
-
-    .project-link {
-        text-decoration: none;
-        color: #fff;
-        background-color: #007bff;
-        padding: 10px 15px;
-        border-radius: 6px;
-        text-align: center;
-        font-weight: bold;
-        transition: background 0.3s;
-        align-self: flex-start;
-        font-size: 0.9rem;
-    }
-
-    .project-link:hover {
-        background-color: #0056b3;
-    }
-</style>
- 
-   
-        <h2 class="section-title">Get In Touch</h2>
-        <p>
-            I am currently open to new opportunities, collaborations, and interesting projects. 
-            Whether you have a question about my work or just want to say hi, feel free to drop an email!
-        </p>
-       <a href="mailto:contact@proshantokumarroy.me" class="btn">Email Me</a>
-       <a href="resume.pdf" download class="btn" style="background-color: #10b981; margin-left: 10px;">Download Resume </a>
-    </div>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Get in Touch →</button>
+      </form>
+    </section>
 
     <footer>
-    <p>Made by <strong>Proshanto Kumar Roy</strong></p>
-    <p style="font-size: 0.8rem; color: #64748b;">
-        &copy; <span id="year"></span> All Rights Reserved.
-    </p>
-</footer>
+      <p>© 2025 Proshanto Kumar Roy</p>
+      <div class="footer-links">
+        <a href="mailto:proshantokumarroy633@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/proshantokumarroy" target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/proshanto-kumar-roy" target="_blank"
+          >GitHub</a
+        >
+      </div>
+    </footer>
 
-<script>
-    document.getElementById("year").innerHTML = new Date().getFullYear();
-</script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/69284ae444be881965368baa/1jb2m93c7';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
