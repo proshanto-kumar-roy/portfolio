@@ -661,3 +661,129 @@ code {
   color: #38bdf8;
   text-decoration: none;
 }
+
+/* মেইন কন্টেইনার */
+.timeline-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding: 20px 0;
+}
+
+/* বাম পাশের লম্বা লাইন */
+.timeline-container::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: rgba(59, 130, 246, 0.3); /* আবছা নীল লাইন */
+  top: 0;
+  bottom: 0;
+  left: 150px; /* লাইনটা কোথায় থাকবে */
+  margin-left: -1px;
+}
+
+/* প্রতিটা আইটেম */
+.timeline-item {
+  display: flex;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+/* তারিখ (বাম পাশে) */
+.timeline-date {
+  width: 120px; /* লাইনের বামে জায়গাটুকু */
+  text-align: right;
+  padding-right: 30px;
+  color: #94a3b8;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+/* মাঝখানের গোল ডট বা আইকন */
+.timeline-dot {
+  width: 40px;
+  height: 40px;
+  background: #1e293b; /* গাঢ় ব্যাকগ্রাউন্ড */
+  border: 2px solid #3b82f6; /* নীল বর্ডার */
+  border-radius: 50%;
+  position: absolute;
+  left: 150px; /* লাইনের ঠিক উপরে বসবে */
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b82f6; /* আইকন কালার */
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4); /* গ্লো */
+}
+
+/* ডান পাশের কন্টেন্ট বক্স */
+.timeline-content {
+  flex: 1;
+  margin-left: 60px; /* লাইন থেকে দূরত্ব */
+  background: #111827;
+  border: 1px solid rgba(168, 85, 247, 0.3); /* হালকা বেগুনি বর্ডার */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-3px);
+  border-color: #a855f7; /* হোভার করলে বর্ডার উজ্জ্বল হবে */
+  box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.2);
+}
+
+/* লেখার স্টাইল */
+.role {
+  color: #e879f9; /* পিঙ্ক টাইটেল */
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.company {
+  color: #38bdf8; /* নীল কোম্পানির নাম */
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* টেক ট্যাগস (নিচের ছোট ছোট বক্স) */
+.tech-tags span {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  margin-right: 8px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* মোবাইল রেস্পন্সিভ (ফোনে লাইনটা বামে সরে যাবে) */
+@media (max-width: 768px) {
+  .timeline-container::after {
+    left: 20px;
+  }
+  .timeline-dot {
+    left: 20px;
+  }
+  .timeline-date {
+    position: absolute;
+    top: -25px;
+    left: 50px;
+    width: auto;
+    text-align: left;
+  }
+  .timeline-content {
+    margin-left: 50px;
+    margin-top: 10px;
+  }
+}
