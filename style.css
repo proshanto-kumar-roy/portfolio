@@ -285,3 +285,32 @@ footer {
 .bool {
   color: #ffb86c;
 }
+
+.code-box {
+  background: #0b0f1a;
+  padding: 24px;
+  border-radius: 16px;
+  font-family: monospace;
+  font-size: 15px;
+  color: #e5e7eb;
+}
+
+.key {
+  color: #ff6b6b;
+}
+.name {
+  color: #facc15;
+}
+.role {
+  color: #60a5fa;
+}
+.skills {
+  color: #34d399;
+}
+.location {
+  color: #a78bfa;
+}
+.hireable {
+  color: #22c55e;
+  font-weight: bold;
+}
