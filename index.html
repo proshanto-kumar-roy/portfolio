@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proshanto | Software Engineering Student</title>
 
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fira+Code&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
+    <!-- ================= NAVBAR ================= -->
     <header class="navbar">
       <div class="logo">Proshanto Kumar Roy</div>
       <nav>
@@ -22,11 +27,13 @@
       </nav>
     </header>
 
+    <!-- ================= HERO ================= -->
     <section class="hero">
-      <!-- LEFT: TEXT -->
+      <!-- LEFT : TEXT -->
       <div class="hero-text">
         <h1 class="hero-title">
-          Hi, I'm <span class="gradient-text">Proshanto</span
+          Hi, I'm
+          <span class="gradient-text">Proshanto</span
           ><span class="cursor">|</span>
         </h1>
 
@@ -38,11 +45,12 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn primary">Get Resume</a>
-          <a class="btn outline">GitHub</a>
+          <a href="#" class="btn primary">Get Resume</a>
+          <a href="#" class="btn outline">GitHub</a>
         </div>
       </div>
 
+      <!-- RIGHT : CODE BOX -->
       <div class="hero-right">
         <div class="code-box">
           <div class="code-header">
@@ -51,7 +59,7 @@
             <span class="dot green"></span>
           </div>
 
-          <pre class="code-box">
+          <pre class="code-content">
 const <span class="key">programmer</span> = {
   name: <span class="name">'Proshanto Kumar Roy'</span>,
   role: <span class="role">'Software Engineering Student'</span>,
@@ -59,12 +67,13 @@ const <span class="key">programmer</span> = {
   location: <span class="location">'Greater Noida, India'</span>,
   hireable: <span class="hireable">true</span>
 };
-</pre>
+          </pre>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section reveal">
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section">
       <h3 class="section-title">Who am I?</h3>
       <p class="about-text">
         I am a Software Engineering student pursuing Computer Science and
@@ -79,7 +88,8 @@ const <span class="key">programmer</span> = {
       </p>
     </section>
 
-    <section id="skills" class="section reveal">
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="section">
       <h3 class="section-title">Skills & Technologies</h3>
 
       <div class="skills-grid">
@@ -89,7 +99,8 @@ const <span class="key">programmer</span> = {
       </div>
     </section>
 
-    <section id="projects" class="section reveal">
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects" class="section">
       <h3 class="section-title">Projects</h3>
 
       <div class="projects-grid">
@@ -107,7 +118,8 @@ const <span class="key">programmer</span> = {
       </div>
     </section>
 
-    <section id="contact" class="section reveal">
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section">
       <h3 class="section-title">Let’s Connect</h3>
       <p class="contact-text">
         Interested in collaboration or opportunities? Feel free to reach out —
@@ -122,8 +134,10 @@ const <span class="key">programmer</span> = {
       </form>
     </section>
 
+    <!-- ================= FOOTER ================= -->
     <footer>© 2025 Proshanto Kumar Roy</footer>
 
+    <!-- JS -->
     <script src="script.js"></script>
   </body>
 </html>
