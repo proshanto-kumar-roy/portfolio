@@ -458,7 +458,8 @@ code {
   font-size: 0.9rem;
 }
 
-/* শুধু GitHub আইকনটি সাদা করার জন্য */
-.fa-github {
-  color: #ffffff !important;
+/* আপনার গিটহাব আইকন বা ইমেজের ক্লাস নাম যেটা আছে, সেটা ব্যবহার করুন */
+.fa-github,
+img[alt="GitHub"] {
+  filter: brightness(0) invert(1) !important;
 }
