@@ -514,3 +514,116 @@ code {
   color: #64ffda; /* Who am I এর বাকি টেক্সট নীলচে */
   margin-bottom: 20px;
 }
+
+/* --- Projects Section Styles --- */
+
+.projects-section {
+  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto; /* মাঝখানে রাখার জন্য */
+}
+
+/* গ্রিড লেআউট (কার্ডগুলো পাশাপাশি আনার জন্য) */
+.projects-grid {
+  display: grid;
+  /* জায়গা থাকলে পাশাপাশি ২টা, না থাকলে ১টা দেখাবে */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  margin-top: 40px;
+}
+
+/* কার্ডের মেইন ডিজাইন */
+.project-card {
+  background-color: #111a28; /* খুব গাঢ় নীল ব্যাকগ্রাউন্ড */
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.08); /* হালকা বর্ডার */
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* হোভার করলে কার্ডটা একটু উপরে উঠবে এবং গ্লো করবে */
+.project-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(100, 255, 218, 0.5); /* বর্ডার সবুজ হবে */
+  box-shadow: 0 10px 40px -10px rgba(2, 12, 27, 0.7);
+}
+
+/* কার্ডের উপরের অংশ (Title + Link Icon) */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.project-title {
+  color: #60a5fa; /* হালকা নীল রঙের টাইটেল */
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.top-link-icon {
+  color: #4ade80; /* সবুজ লিংক আইকন */
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.top-link-icon:hover {
+  transform: scale(1.2); /* মাউস নিলে বড় হবে */
+}
+
+/* প্রজেক্টের বর্ণনা */
+.project-desc {
+  color: #94a3b8; /* ছাই রঙের টেক্সট */
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  flex-grow: 1; /* ফুটারকে নিচে ঠেলে দেবে */
+}
+
+/* কার্ড ফুটার (Technology + Visit Button) */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* মাঝখানের দাগ */
+  padding-top: 20px;
+}
+
+/* টেকনোলজি এবং ডট */
+.tech-stack {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; /* গোল শেপ */
+  display: inline-block;
+}
+
+/* নিচে ডানদিকের বাটন */
+.visit-btn {
+  color: #cbd5e1;
+  font-size: 14px;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.visit-btn:hover {
+  color: #64ffda; /* হোভার করলে সবুজ */
+}
