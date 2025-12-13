@@ -453,3 +453,84 @@ code {
     height: auto;
   }
 }
+
+.skills-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+/* টাইটেল স্টাইল (মাঝখানে) */
+.section-title-center {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 50px;
+  display: inline-block;
+  border-bottom: 3px solid #a855f7; /* টাইটেলের নিচে দাগ */
+  padding-bottom: 10px;
+}
+
+/* কার্ডগুলো পাশাপাশি রাখার জন্য */
+.skills-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* ছোট স্ক্রিনে নিচে নিচে নামবে */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* এক একটা কার্ডের ডিজাইন */
+.skill-card {
+  background: #0d0d16; /* খুব গাঢ় ব্যাকগ্রাউন্ড */
+  border: 1px solid rgba(168, 85, 247, 0.3); /* হালকা বর্ডার */
+  border-radius: 15px;
+  padding: 30px;
+  width: 350px; /* কার্ডের সাইজ */
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.1); /* হালকা শ্যাডো */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* কার্ডে মাউস নিলে গ্লো বাড়বে */
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+  border-color: #a855f7;
+}
+
+.skill-card h3 {
+  color: #ec4899; /* শিরোনামের পিঙ্ক কালার */
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+/* আইকন গ্রিড */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* এক লাইনে ৩টা আইকন */
+  gap: 20px;
+}
+
+/* প্রতিটি আইকন আইটেম */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-item i {
+  font-size: 40px; /* আইকনের সাইজ */
+  transition: transform 0.3s;
+}
+
+.skill-item:hover i {
+  transform: scale(1.2); /* আইকনে মাউস নিলে জুম হবে */
+}
+
+.skill-item span {
+  color: #a0aec0;
+  font-size: 0.9rem;
+}
