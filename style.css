@@ -7,7 +7,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  /* Darshan-এর মতো গাঢ় ব্যাকগ্রাউন্ড এবং ওপরের গ্লো */
+  /* Darshan-এর মতো গাঢ় ব্যাকগ্রাউন্ড */
   background-color: #0b0b13;
   background-image: radial-gradient(
     circle at 50% -10%,
@@ -17,6 +17,7 @@ body {
   background-repeat: no-repeat;
   color: white;
   min-height: 100vh;
+  overflow-x: hidden; /* সাইড স্ক্রল বন্ধ করার জন্য */
 }
 
 /* --- Navbar Styling --- */
@@ -30,9 +31,10 @@ body {
 }
 
 .logo {
-  color: #4ade80; /* হালকা সবুজ লোগো */
+  color: #4ade80; /* হালকা সবুজ */
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
 }
 
 .nav-links {
@@ -44,14 +46,15 @@ body {
 .nav-links a {
   text-decoration: none;
   color: #cbd5e1;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 500;
   transition: 0.3s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: white;
-  font-weight: 600;
+  color: #4ade80; /* সবুজাভ আভা */
+  text-shadow: 0 0 10px rgba(74, 222, 128, 0.4);
 }
 
 /* --- Hero Section Styling --- */
@@ -60,9 +63,9 @@ body {
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  margin: 40px auto; /* ওপর থেকে একটু গ্যাপ */
+  margin: 60px auto;
   padding: 0 30px;
-  flex-wrap: wrap; /* ছোট স্ক্রিনে যাতে ভেঙে নিচে নামে */
+  flex-wrap: wrap;
 }
 
 /* --- Left Side Text --- */
@@ -71,63 +74,66 @@ body {
   min-width: 350px;
 }
 
-/* "Hi, I'm" - কালারফুল গ্রেডিয়েন্ট টেক্সট */
+.hero-text h1 {
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
 .greeting {
   font-size: 2.5rem;
   font-weight: 700;
-  background: linear-gradient(to right, #a855f7, #ec4899); /* বেগুনি ও গোলাপি */
+  background: linear-gradient(to right, #a855f7, #ec4899);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* নাম - সাদা রঙের */
 .name {
-  display: block;
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.1;
-  margin-top: 5px;
 }
 
-.role {
-  color: #4ade80; /* সবুজ রঙের টাইটেল */
-  font-size: 1.1rem;
-  margin-top: 15px;
+.subtitle {
+  font-size: 1.2rem;
+  color: #4ade80; /* সবুজ সাবটাইটেল */
   font-weight: 500;
+  margin-bottom: 15px;
+  font-family: "Fira Code", monospace; /* কোডিং ফন্ট */
 }
 
 .description {
-  color: #94a3b8; /* হালকা ছাই রঙ */
-  margin-top: 20px;
-  line-height: 1.6;
+  color: #94a3b8;
+  line-height: 1.7;
   max-width: 500px;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  margin-bottom: 30px;
 }
 
-/* সোশ্যাল আইকন - সবুজ (Darshan Style) */
+/* সোশ্যাল আইকন */
 .social-icons {
-  margin: 30px 0;
+  margin-bottom: 35px;
   display: flex;
   gap: 20px;
 }
 
 .social-icons a {
-  color: #4ade80; /* হুবহু ওই সবুজ রঙ */
-  font-size: 1.5rem;
-  transition: transform 0.3s;
+  color: #a8b2d1;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-  transform: translateY(-3px);
-  color: #22c55e;
+  transform: translateY(-4px);
+  color: #4ade80;
 }
 
 /* বাটন ডিজাইন */
 .btn-resume {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   padding: 12px 30px;
-  background: linear-gradient(90deg, #ec4899, #8b5cf6); /* পিঙ্ক-বেগুনি বাটন */
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
   color: white;
   text-decoration: none;
   border-radius: 50px;
@@ -139,55 +145,53 @@ body {
 
 .btn-resume:hover {
   box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+  transform: scale(1.05);
 }
 
 /* --- Right Side Code Window --- */
-.code-window {
+.code-card-wrapper {
   flex: 1;
   min-width: 400px;
-  background: #11111b; /* কোড বক্সের ব্যাকগ্রাউন্ড */
-  border: 1px solid #2d2d3a;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 0 60px rgba(124, 58, 237, 0.15); /* পেছনের হালকা গ্লো */
-  margin-top: 20px;
   position: relative;
-  left: 20px; /* একটু ডান দিকে চাপানোর জন্য */
+  display: flex;
+  justify-content: center; /* কোড কার্ড সেন্টারে রাখার জন্য */
+  margin-top: 30px;
 }
 
-/* ১. পেছনের গ্লো বা কালার রিফ্লেকশন */
-.code-card-wrapper {
-  position: relative;
-  display: inline-block;
-  padding: 2px; /* বর্ডারের মতো কাজ করবে */
-  border-radius: 12px;
+/* Glow Effect (ব্যাকগ্রাউন্ডের রঙিন আভা) */
+.glow-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(168, 85, 247, 0.4),
-    rgba(59, 130, 246, 0.4)
-  ); /* বেগুনি-নীল আভা */
-  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.3); /* পেছনের বড় গ্লো */
+    rgba(168, 85, 247, 0.5),
+    rgba(74, 222, 128, 0.3)
+  );
+  filter: blur(80px); /* ব্লার ইফেক্ট */
+  z-index: -1;
+  opacity: 0.6;
 }
 
-/* ২. মূল কোড কার্ড */
+/* কোড কার্ড বডি */
 .code-card {
-  background-color: #0d0d16; /* খুব গাঢ় ব্যাকগ্রাউন্ড */
+  background-color: #0d0d16;
   padding: 25px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  font-family: "Fira Code", monospace; /* সুন্দর কোড ফন্ট */
-  width: 450px; /* ফিক্সড সাইজ দিলে লাইন ভাঙবে না */
+  font-family: "Fira Code", monospace;
+  width: 480px;
   max-width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
-/* ৩. Apple Icons (উইন্ডো হেডার) এবং মার্জিন - FIXED MERGED */
+/* ম্যাকবুক স্টাইল বাটন */
 .window-header {
   display: flex;
-  gap: 10px;
-  padding-bottom: 15px; /* ডট এবং লাইনের মাঝখানের ফাঁকা */
-  margin-bottom: 20px; /* লাইন এবং নিচের কোডের মাঝখানের ফাঁকা */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* হালকা লাইন */
-  box-shadow: 0 4px 20px -5px rgba(129, 92, 246, 0.3); /* নিচে নীলচে রিফ্লেকশন */
+  gap: 8px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dot {
@@ -205,45 +209,38 @@ body {
   background-color: #27c93f;
 }
 
-/* কোড স্টাইলিং */
-.code-body pre,
+/* কোড টেক্সট */
 pre {
-  font-family: "Fira Code", monospace;
-  font-size: 0.9rem;
-  line-height: 1.5;
   margin: 0;
   white-space: pre;
-  overflow-x: auto; /* Fixed: allows scrolling if needed */
+  overflow-x: auto; /* কোড বড় হলে স্ক্রল হবে */
 }
 
 code {
-  font-size: 15px;
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
   line-height: 1.6;
   color: #abb2bf;
 }
 
-/* সিনট্যাক্স কালার (দর্শনের মতো) */
+/* সিনট্যাক্স কালার */
 .keyword {
   color: #c678dd;
-} /* const, function, return - পিঙ্ক/বেগুনি */
-.variable,
+}
 .variable-name {
   color: #e5c07b;
-} /* Proshanto - হলুদ */
-.operator {
-  color: #ffffff;
-} /* = */
+}
 .key {
-  color: #ffffff;
-} /* fullName, location - সাদা */
+  color: #56b6c2;
+} /* নতুন নীল কালার কি-এর জন্য */
 .string {
-  color: #60cd13;
-} /* 'India' - সবুজ */
+  color: #98c379;
+}
 .boolean {
   color: #d19a66;
-} /* true - কমলা/হলুদ */
+}
 
-/* কার্সার অ্যানিমেশন (Blink Effect) - FIXED DUPLICATE */
+/* কার্সার অ্যানিমেশন */
 @keyframes blink {
   0%,
   100% {
@@ -256,72 +253,16 @@ code {
 
 .cursor {
   display: inline-block;
-  width: 5px;
-  height: 1.2em;
-  background-color: #ffffff;
-  margin-left: 5px;
-  animation: blink 1s step-end infinite;
-  vertical-align: sub;
+  width: 8px;
+  height: 15px;
+  background-color: #4ade80; /* সবুজ কার্সার */
+  animation: blink 1s infinite;
 }
 
-/* রেসপন্সিভ ডিজাইন (মোবাইলের জন্য) */
-@media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column-reverse; /* মোবাইলে কোড নিচে যাবে */
-    padding: 20px;
-    text-align: center;
-  }
-  .code-window {
-    min-width: 100%;
-    left: 0;
-    margin-bottom: 40px;
-  }
-  .social-icons {
-    justify-content: center;
-  }
-  .navbar {
-    padding: 20px;
-    flex-direction: column;
-    gap: 15px;
-  }
-  .name {
-    font-size: 2.5rem;
-  }
-
-  .about-content {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  .about-image img {
-    width: 80%;
-    height: auto;
-  }
-}
-
-/* --- About & Socials --- */
-.social-links {
-  display: flex;
-  gap: 20px;
-  margin-top: 25px;
-  margin-bottom: 30px;
-}
-
-.social-icon {
-  font-size: 24px;
-  color: #a8b2d1;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.social-icon:hover {
-  color: #64ffda;
-  transform: translateY(-3px);
-  text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
-}
-
+/* --- About Section --- */
 .about-section {
   padding: 100px 0;
-  color: white;
+  margin-top: 50px;
 }
 
 .container {
@@ -334,20 +275,17 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
+  gap: 60px;
 }
 
 .about-text {
   flex: 1;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #d1d5db;
 }
 
 .section-title {
   font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   color: #ec4899;
 }
 
@@ -362,6 +300,12 @@ code {
   font-size: 3.5rem;
 }
 
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #d1d5db;
+}
+
 .about-image {
   flex: 0.8;
   display: flex;
@@ -369,32 +313,43 @@ code {
 }
 
 .about-image img {
-  width: 300px;
-  height: 350px;
+  width: 320px;
+  height: 380px;
   object-fit: cover;
-  border-radius: 15px;
-  border: 2px solid #a855f7;
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+  border-radius: 20px;
+  border: 3px solid #2d2d3a;
+  box-shadow: 20px 20px 0px rgba(168, 85, 247, 0.2); /* সলিড শ্যাডো ইফেক্ট */
   transition: transform 0.3s ease;
 }
 
 .about-image img:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px);
 }
 
 /* --- Skills Section --- */
 .skills-section {
-  padding: 80px 0;
+  padding: 80px 0 120px;
   text-align: center;
 }
 
 .section-title-center {
   font-size: 2.5rem;
   color: white;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   display: inline-block;
-  border-bottom: 3px solid #a855f7;
-  padding-bottom: 10px;
+  position: relative;
+}
+
+/* টাইটেলের নিচের দাগ */
+.section-title-center::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  background: #a855f7;
+  bottom: -10px;
+  left: 20%;
+  border-radius: 2px;
 }
 
 .skills-container {
@@ -408,32 +363,31 @@ code {
 }
 
 .skill-card {
-  background: #0d0d16;
-  border: 1px solid rgba(168, 85, 247, 0.3);
-  border-radius: 15px;
+  background: #11111b;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
   padding: 30px;
   width: 350px;
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
 
 .skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
   border-color: #a855f7;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .skill-card h3 {
   color: #ec4899;
-  margin-bottom: 25px;
-  font-size: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 10px;
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* এক লাইনে ৩টা */
   gap: 20px;
 }
 
@@ -441,11 +395,12 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
+/* আইকন সাইজ (Devicon & FontAwesome) */
 .skill-item i {
-  font-size: 40px;
+  font-size: 45px; /* আইকন বড় করা হয়েছে */
   transition: transform 0.3s;
 }
 
@@ -454,6 +409,49 @@ code {
 }
 
 .skill-item span {
-  color: #a0aec0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-container {
+    flex-direction: column-reverse; /* মোবাইলে কোড নিচে যাবে */
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .code-card-wrapper {
+    margin-bottom: 40px;
+    min-width: 100%;
+  }
+
+  .code-card {
+    width: 100%;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .about-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 30px;
+  }
 }
