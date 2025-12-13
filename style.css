@@ -220,3 +220,68 @@ footer {
     width: 100%;
   }
 }
+
+/* ============================= */
+/* DARSHAN STYLE CODE BOX */
+/* ============================= */
+
+.code-box {
+  background: #0f1629;
+  border-radius: 14px;
+  width: 460px;
+  box-shadow: 0 0 30px rgba(155, 92, 255, 0.35),
+    inset 0 0 12px rgba(155, 92, 255, 0.15);
+  overflow: hidden;
+}
+
+/* HEADER BAR */
+.code-header {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 8px;
+  background: linear-gradient(90deg, #9b5cff, #00ff9c);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red {
+  background: #ff5f56;
+}
+.yellow {
+  background: #ffbd2e;
+}
+.green {
+  background: #27c93f;
+}
+
+/* CODE CONTENT */
+.code-content {
+  padding: 22px 26px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.95rem;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* SYNTAX COLORS */
+.kw {
+  color: #ff7edb;
+}
+
+.key {
+  color: #ffffff;
+}
+
+.string {
+  color: #00ff9c;
+}
+
+.bool {
+  color: #ffb86c;
+}
