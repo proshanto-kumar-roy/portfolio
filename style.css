@@ -515,115 +515,110 @@ code {
   margin-bottom: 20px;
 }
 
-/* --- Projects Section Styles --- */
-
-.projects-section {
-  padding: 20px 0;
-  max-width: 1200px;
-  margin: 0 auto; /* মাঝখানে রাখার জন্য */
-}
-
-/* গ্রিড লেআউট (কার্ডগুলো পাশাপাশি আনার জন্য) */
+/* গ্রিড লেআউট (পাশাপাশি কার্ড আনার জন্য) */
 .projects-grid {
   display: grid;
-  /* জায়গা থাকলে পাশাপাশি ২টা, না থাকলে ১টা দেখাবে */
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(350px, 1fr)
+  ); /* অটোমেটিক কলাম হবে */
+  gap: 30px; /* কার্ডগুলোর মাঝখানের দূরত্ব */
+  max-width: 1200px;
+  margin: 50px auto;
   padding: 0 20px;
-  margin-top: 40px;
 }
 
-/* কার্ডের মেইন ডিজাইন */
+/* কার্ডের মূল ডিজাইন */
 .project-card {
-  background-color: #111a28; /* খুব গাঢ় নীল ব্যাকগ্রাউন্ড */
+  background: #111827; /* গাঢ় ব্যাকগ্রাউন্ড */
+  border: 1px solid #1f2937; /* হালকা বর্ডার */
   border-radius: 16px;
-  padding: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.08); /* হালকা বর্ডার */
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 220px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* হোভার করলে কার্ডটা একটু উপরে উঠবে এবং গ্লো করবে */
+/* মাউস নিলে কার্ডটা ভেসে উঠবে */
 .project-card:hover {
-  transform: translateY(-7px);
-  border-color: rgba(100, 255, 218, 0.5); /* বর্ডার সবুজ হবে */
-  box-shadow: 0 10px 40px -10px rgba(2, 12, 27, 0.7);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3); /* নীলচে গ্লো */
+  border-color: #3b82f6;
 }
 
-/* কার্ডের উপরের অংশ (Title + Link Icon) */
+/* প্রজেক্টের নাম */
 .card-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 15px;
 }
 
-.project-title {
-  color: #60a5fa; /* হালকা নীল রঙের টাইটেল */
-  font-size: 22px;
-  font-weight: 700;
+.project-name {
+  color: #38bdf8; /* উজ্জ্বল নীল (Cyan) */
+  font-size: 20px;
+  font-weight: bold;
   margin: 0;
 }
 
-.top-link-icon {
-  color: #4ade80; /* সবুজ লিংক আইকন */
+.github-link i {
+  color: #94a3b8;
   font-size: 18px;
-  transition: transform 0.2s;
+  transition: color 0.3s;
 }
 
-.top-link-icon:hover {
-  transform: scale(1.2); /* মাউস নিলে বড় হবে */
+.github-link:hover i {
+  color: #ffffff;
 }
 
-/* প্রজেক্টের বর্ণনা */
+/* বর্ণনা */
 .project-desc {
-  color: #94a3b8; /* ছাই রঙের টেক্সট */
+  color: #cbd5e1; /* হালকা ছাই রং */
   font-size: 15px;
   line-height: 1.6;
-  margin-bottom: 30px;
-  flex-grow: 1; /* ফুটারকে নিচে ঠেলে দেবে */
+  margin-bottom: 25px;
 }
 
-/* কার্ড ফুটার (Technology + Visit Button) */
+/* নিচের ফুটার অংশ (ল্যাঙ্গুয়েজ ও বাটন) */
 .card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* মাঝখানের দাগ */
-  padding-top: 20px;
+  border-top: 1px solid #1f2937; /* উপরে সরু লাইন */
+  padding-top: 15px;
 }
 
-/* টেকনোলজি এবং ডট */
 .tech-stack {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: #e2e8f0;
+  gap: 8px;
+  color: #ffffff;
   font-size: 14px;
   font-weight: 500;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%; /* গোল শেপ */
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   display: inline-block;
 }
+.yellow {
+  background-color: #facc15;
+}
+.orange {
+  background-color: #f97316;
+}
 
-/* নিচে ডানদিকের বাটন */
+/* ডানদিকের লিংক বাটন */
 .visit-btn {
-  color: #cbd5e1;
-  font-size: 14px;
+  color: #ffffff;
   text-decoration: underline;
-  font-weight: 500;
+  font-size: 14px;
   transition: color 0.3s;
 }
 
 .visit-btn:hover {
-  color: #64ffda; /* হোভার করলে সবুজ */
+  color: #38bdf8;
+  text-decoration: none;
 }
