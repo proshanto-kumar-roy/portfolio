@@ -7,7 +7,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  /* Darshan-এর মতো গাঢ় ব্যাকগ্রাউন্ড এবং ওপরের গ্লো */
+  /* Darshan-এর মতো গাঢ় ব্যাকগ্রাউন্ড এবং ওপরের গ্লো */
   background-color: #0b0b13;
   background-image: radial-gradient(
     circle at 50% -10%,
@@ -71,7 +71,7 @@ body {
   min-width: 350px;
 }
 
-/* "Hi, I'm" - কালারফুল গ্রেডিয়েন্ট টেক্সট */
+/* "Hi, I'm" - কালারফুল গ্রেডিয়েন্ট টেক্সট */
 .greeting {
   font-size: 2.5rem;
   font-weight: 700;
@@ -155,46 +155,80 @@ body {
   left: 20px; /* একটু ডান দিকে চাপানোর জন্য */
 }
 
-/* উইন্ডো বাটন (লাল, হলুদ, সবুজ) */
+/* ১. পেছনের গ্লো বা কালার রিফ্লেকশন */
+.code-card-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 2px; /* বর্ডারের মতো কাজ করবে */
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.4),
+    rgba(59, 130, 246, 0.4)
+  ); /* বেগুনি-নীল আভা */
+  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.3); /* পেছনের বড় গ্লো */
+}
+
+/* ২. মূল কোড কার্ড */
+.code-card {
+  background-color: #0d0d16; /* খুব গাঢ় ব্যাকগ্রাউন্ড */
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: "Fira Code", monospace; /* সুন্দর কোড ফন্ট */
+  width: 450px; /* ফিক্সড সাইজ দিলে লাইন ভাঙবে না */
+  max-width: 100%;
+}
+
+/* ৩. Apple Icons (উইন্ডো হেডার) এবং মার্জিন - FIXED MERGED */
 .window-header {
   display: flex;
   gap: 10px;
-
-  /* এই অংশগুলো নতুন যোগ করা হয়েছে লাইন এবং স্পেসের জন্য */
   padding-bottom: 15px; /* ডট এবং লাইনের মাঝখানের ফাঁকা */
   margin-bottom: 20px; /* লাইন এবং নিচের কোডের মাঝখানের ফাঁকা */
-
-  /* গ্লোয়িং লাইন বা রিফ্লেকশন ইফেক্ট */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* হালকা লাইন */
   box-shadow: 0 4px 20px -5px rgba(129, 92, 246, 0.3); /* নিচে নীলচে রিফ্লেকশন */
 }
+
 .dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
 }
 .red {
-  background: #ff5f56;
+  background-color: #ff5f56;
 }
 .yellow {
-  background: #ffbd2e;
+  background-color: #ffbd2e;
 }
 .green {
-  background: #27c93f;
+  background-color: #27c93f;
 }
 
-/* কোড সিনট্যাক্স হাইলাইটিং (Darshan Style) */
-.code-body pre {
+/* কোড স্টাইলিং */
+.code-body pre,
+pre {
   font-family: "Fira Code", monospace;
   font-size: 0.9rem;
   line-height: 1.5;
+  margin: 0;
+  white-space: pre;
+  overflow-x: auto; /* Fixed: allows scrolling if needed */
 }
 
+code {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #abb2bf;
+}
+
+/* সিনট্যাক্স কালার (দর্শনের মতো) */
 .keyword {
-  color: #d946ef;
+  color: #c678dd;
 } /* const, function, return - পিঙ্ক/বেগুনি */
-.variable {
-  color: #facc15;
+.variable,
+.variable-name {
+  color: #e5c07b;
 } /* Proshanto - হলুদ */
 .operator {
   color: #ffffff;
@@ -203,11 +237,32 @@ body {
   color: #ffffff;
 } /* fullName, location - সাদা */
 .string {
-  color: #4ade80;
+  color: #60cd13;
 } /* 'India' - সবুজ */
 .boolean {
-  color: #facc15;
-} /* true - হলুদ */
+  color: #d19a66;
+} /* true - কমলা/হলুদ */
+
+/* কার্সার অ্যানিমেশন (Blink Effect) - FIXED DUPLICATE */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor {
+  display: inline-block;
+  width: 5px;
+  height: 1.2em;
+  background-color: #ffffff;
+  margin-left: 5px;
+  animation: blink 1s step-end infinite;
+  vertical-align: sub;
+}
 
 /* রেসপন্সিভ ডিজাইন (মোবাইলের জন্য) */
 @media (max-width: 768px) {
@@ -232,149 +287,41 @@ body {
   .name {
     font-size: 2.5rem;
   }
-}
 
-/* ১. পেছনের গ্লো বা কালার রিফ্লেকশন */
-.code-card-wrapper {
-  position: relative;
-  display: inline-block;
-  padding: 2px; /* বর্ডারের মতো কাজ করবে */
-  border-radius: 12px;
-  background: linear-gradient(
-    135deg,
-    rgba(168, 85, 247, 0.4),
-    rgba(59, 130, 246, 0.4)
-  ); /* বেগুনি-নীল আভা */
-  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.3); /* পেছনের বড় গ্লো */
-}
-
-/* ২. মূল কোড কার্ড */
-.code-card {
-  background-color: #0d0d16; /* খুব গাঢ় ব্যাকগ্রাউন্ড */
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  font-family: "Fira Code", monospace; /* সুন্দর কোড ফন্ট */
-  width: 450px; /* ফিক্সড সাইজ দিলে লাইন ভাঙবে না */
-  max-width: 100%;
-}
-
-/* ৩. Apple Icons (উইন্ডো হেডার) এবং মার্জিন */
-.window-header {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 25px; /* এই মার্জিনটা আপনার মিসিং ছিল */
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-.red {
-  background-color: #ff5f56;
-}
-.yellow {
-  background-color: #ffbd2e;
-}
-.green {
-  background-color: #27c93f;
-}
-
-/* ৪. কোড স্টাইলিং */
-pre {
-  margin: 0;
-  white-space: pre; /* এটা দিলে লাইন ভাঙবে না */
-  overflow-x: hidden; /* স্ক্রলবার আটকাবে */
-}
-
-code {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #abb2bf;
-}
-
-/* সিনট্যাক্স কালার (দর্শনের মতো) */
-.keyword {
-  color: #c678dd;
-} /* const, function, return (বেগুনি/গোলাপি) */
-.variable-name {
-  color: #e5c07b;
-} /* Proshanto (হলুদ/গোল্ডেন) */
-.key {
-  color: #ffffff;
-} /* fullName, skills (সাদা) */
-.string {
-  color: #60cd13;
-} /* 'Value' (সবুজ) */
-.boolean {
-  color: #d19a66;
-} /* true (কমলা) */
-
-/* কার্সার অ্যানিমেশন (Blink Effect) */
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
+  .about-content {
+    flex-direction: column-reverse;
+    text-align: center;
   }
-  50% {
-    opacity: 0;
+  .about-image img {
+    width: 80%;
+    height: auto;
   }
 }
 
-.cursor {
-  display: inline-block;
-
-  /* সাইজ বড় করার জন্য */
-  width: 5px; /* আগের চেয়ে মোটা (3px -> 5px) */
-  height: 1.2em; /* লেখার চেয়ে একটু লম্বা */
-
-  /* রঙ সাদা করার জন্য */
-  background-color: #ffffff;
-
-  margin-left: 5px;
-  animation: blink 1s step-end infinite;
-  vertical-align: sub; /* লাইন বরাবর ঠিকভাবে বসার জন্য */
-}
-
-/* অ্যানিমেশন একই থাকবে */
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
+/* --- About & Socials --- */
 .social-links {
   display: flex;
-  gap: 20px; /* আইকনগুলোর মাঝখানের দূরত্ব */
+  gap: 20px;
   margin-top: 25px;
   margin-bottom: 30px;
 }
 
 .social-icon {
-  font-size: 24px; /* আইকনের সাইজ */
-  color: #a8b2d1; /* নরমাল অবস্থায় হালকা কালার */
-  transition: all 0.3s ease; /* স্মুথ ট্রানজিশন */
+  font-size: 24px;
+  color: #a8b2d1;
+  transition: all 0.3s ease;
   display: inline-block;
 }
 
-/* মাউস হোভার করলে যা হবে (দর্শনের স্টাইল) */
 .social-icon:hover {
-  color: #64ffda; /* সেই নিওন গ্রিন কালার */
-  transform: translateY(-3px); /* একটু উপরে ভেসে উঠবে */
-  text-shadow: 0 0 10px rgba(100, 255, 218, 0.5); /* হালকা গ্লো */
+  color: #64ffda;
+  transform: translateY(-3px);
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
 }
 
-/* পুরো সেকশনের গ্যাপ এবং প্যাডিং */
 .about-section {
   padding: 100px 0;
   color: white;
-  /* প্রয়োজনে ব্যাকগ্রাউন্ড কালার অ্যাডজাস্ট করতে পারেন */
 }
 
 .container {
@@ -383,7 +330,6 @@ code {
   margin: 0 auto;
 }
 
-/* পাশাপাশি সাজানোর জন্য ফ্লেক্সবক্স */
 .about-content {
   display: flex;
   align-items: center;
@@ -391,107 +337,86 @@ code {
   gap: 50px;
 }
 
-/* লেখার স্টাইল */
 .about-text {
-  flex: 1; /* অর্ধেক জায়গা নেবে */
+  flex: 1;
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #d1d5db; /* হালকা ধূসর টেক্সট */
+  color: #d1d5db;
 }
 
-/* শিরোনামের ডিজাইন (W এবং I কালার করা) */
 .section-title {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 30px;
-  color: #ec4899; /* ডিফল্ট গোলাপি */
+  color: #ec4899;
 }
 
 .section-title span {
-  color: white; /* বাকি লেখা সাদা */
+  color: white;
 }
 
-/* গ্রেডিয়েন্ট অক্ষর (W এবং I) */
 .gradient-text {
   background: linear-gradient(to right, #a855f7, #ec4899);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 3.5rem; /* একটু বড় */
+  font-size: 3.5rem;
 }
 
-/* ছবির কন্টেইনার */
 .about-image {
-  flex: 0.8; /* একটু কম জায়গা নেবে */
+  flex: 0.8;
   display: flex;
   justify-content: center;
 }
 
-/* ছবির স্টাইল এবং গ্লো */
 .about-image img {
-  width: 300px; /* প্রয়োজন মতো বাড়াতে পারেন */
+  width: 300px;
   height: 350px;
   object-fit: cover;
   border-radius: 15px;
-  border: 2px solid #a855f7; /* বর্ডার */
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4); /* বেগুনি গ্লো */
+  border: 2px solid #a855f7;
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
   transition: transform 0.3s ease;
 }
 
 .about-image img:hover {
-  transform: scale(1.03); /* মাউস নিলে একটু জুম হবে */
+  transform: scale(1.03);
 }
 
-/* মোবাইল রেস্পন্সিভনেস */
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column-reverse; /* মোবাইলে ছবি উপরে, লেখা নিচে */
-    text-align: center;
-  }
-
-  .about-image img {
-    width: 80%; /* মোবাইলে চওড়া হবে */
-    height: auto;
-  }
-}
-
+/* --- Skills Section --- */
 .skills-section {
   padding: 80px 0;
   text-align: center;
 }
 
-/* টাইটেল স্টাইল (মাঝখানে) */
 .section-title-center {
   font-size: 2.5rem;
   color: white;
   margin-bottom: 50px;
   display: inline-block;
-  border-bottom: 3px solid #a855f7; /* টাইটেলের নিচে দাগ */
+  border-bottom: 3px solid #a855f7;
   padding-bottom: 10px;
 }
 
-/* কার্ডগুলো পাশাপাশি রাখার জন্য */
 .skills-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* ছোট স্ক্রিনে নিচে নিচে নামবে */
+  flex-wrap: wrap;
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* এক একটা কার্ডের ডিজাইন */
 .skill-card {
-  background: #0d0d16; /* খুব গাঢ় ব্যাকগ্রাউন্ড */
-  border: 1px solid rgba(168, 85, 247, 0.3); /* হালকা বর্ডার */
+  background: #0d0d16;
+  border: 1px solid rgba(168, 85, 247, 0.3);
   border-radius: 15px;
   padding: 30px;
-  width: 350px; /* কার্ডের সাইজ */
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.1); /* হালকা শ্যাডো */
+  width: 350px;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* কার্ডে মাউস নিলে গ্লো বাড়বে */
 .skill-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
@@ -499,21 +424,19 @@ code {
 }
 
 .skill-card h3 {
-  color: #ec4899; /* শিরোনামের পিঙ্ক কালার */
+  color: #ec4899;
   margin-bottom: 25px;
   font-size: 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 10px;
 }
 
-/* আইকন গ্রিড */
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* এক লাইনে ৩টা আইকন */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-/* প্রতিটি আইকন আইটেম */
 .skill-item {
   display: flex;
   flex-direction: column;
@@ -522,12 +445,12 @@ code {
 }
 
 .skill-item i {
-  font-size: 40px; /* আইকনের সাইজ */
+  font-size: 40px;
   transition: transform 0.3s;
 }
 
 .skill-item:hover i {
-  transform: scale(1.2); /* আইকনে মাউস নিলে জুম হবে */
+  transform: scale(1.2);
 }
 
 .skill-item span {
