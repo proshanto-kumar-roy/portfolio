@@ -369,3 +369,87 @@ code {
   transform: translateY(-3px); /* একটু উপরে ভেসে উঠবে */
   text-shadow: 0 0 10px rgba(100, 255, 218, 0.5); /* হালকা গ্লো */
 }
+
+/* পুরো সেকশনের গ্যাপ এবং প্যাডিং */
+.about-section {
+  padding: 100px 0;
+  color: white;
+  /* প্রয়োজনে ব্যাকগ্রাউন্ড কালার অ্যাডজাস্ট করতে পারেন */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* পাশাপাশি সাজানোর জন্য ফ্লেক্সবক্স */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+/* লেখার স্টাইল */
+.about-text {
+  flex: 1; /* অর্ধেক জায়গা নেবে */
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #d1d5db; /* হালকা ধূসর টেক্সট */
+}
+
+/* শিরোনামের ডিজাইন (W এবং I কালার করা) */
+.section-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #ec4899; /* ডিফল্ট গোলাপি */
+}
+
+.section-title span {
+  color: white; /* বাকি লেখা সাদা */
+}
+
+/* গ্রেডিয়েন্ট অক্ষর (W এবং I) */
+.gradient-text {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3.5rem; /* একটু বড় */
+}
+
+/* ছবির কন্টেইনার */
+.about-image {
+  flex: 0.8; /* একটু কম জায়গা নেবে */
+  display: flex;
+  justify-content: center;
+}
+
+/* ছবির স্টাইল এবং গ্লো */
+.about-image img {
+  width: 300px; /* প্রয়োজন মতো বাড়াতে পারেন */
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid #a855f7; /* বর্ডার */
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4); /* বেগুনি গ্লো */
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.03); /* মাউস নিলে একটু জুম হবে */
+}
+
+/* মোবাইল রেস্পন্সিভনেস */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column-reverse; /* মোবাইলে ছবি উপরে, লেখা নিচে */
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 80%; /* মোবাইলে চওড়া হবে */
+    height: auto;
+  }
+}
