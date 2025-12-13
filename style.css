@@ -226,3 +226,81 @@ body {
     font-size: 2.5rem;
   }
 }
+
+/* ১. পেছনের গ্লো বা কালার রিফ্লেকশন */
+.code-card-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 2px; /* বর্ডারের মতো কাজ করবে */
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.4),
+    rgba(59, 130, 246, 0.4)
+  ); /* বেগুনি-নীল আভা */
+  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.3); /* পেছনের বড় গ্লো */
+}
+
+/* ২. মূল কোড কার্ড */
+.code-card {
+  background-color: #0d0d16; /* খুব গাঢ় ব্যাকগ্রাউন্ড */
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: "Fira Code", monospace; /* সুন্দর কোড ফন্ট */
+  width: 450px; /* ফিক্সড সাইজ দিলে লাইন ভাঙবে না */
+  max-width: 100%;
+}
+
+/* ৩. Apple Icons (উইন্ডো হেডার) এবং মার্জিন */
+.window-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 25px; /* এই মার্জিনটা আপনার মিসিং ছিল */
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff5f56;
+}
+.yellow {
+  background-color: #ffbd2e;
+}
+.green {
+  background-color: #27c93f;
+}
+
+/* ৪. কোড স্টাইলিং */
+pre {
+  margin: 0;
+  white-space: pre; /* এটা দিলে লাইন ভাঙবে না */
+  overflow-x: hidden; /* স্ক্রলবার আটকাবে */
+}
+
+code {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #abb2bf;
+}
+
+/* সিনট্যাক্স কালার (দর্শনের মতো) */
+.keyword {
+  color: #c678dd;
+} /* const, function, return (বেগুনি/গোলাপি) */
+.variable-name {
+  color: #e5c07b;
+} /* Proshanto (হলুদ/গোল্ডেন) */
+.key {
+  color: #ffffff;
+} /* fullName, skills (সাদা) */
+.string {
+  color: #98c379;
+} /* 'Value' (সবুজ) */
+.boolean {
+  color: #d19a66;
+} /* true (কমলা) */
