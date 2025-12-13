@@ -5,138 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proshanto | Software Engineering Student</title>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fira+Code&display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header class="navbar">
-      <div class="logo">Proshanto Kumar Roy</div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+  <body class="bg-[#0f172a] text-white overflow-x-hidden font-sans">
+    <nav
+      class="fixed top-0 w-full bg-[#0f172a]/90 backdrop-blur-sm border-b border-gray-800 z-50"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center"
+      >
+        <div class="text-2xl font-bold text-green-400 tracking-wide">
+          Proshanto <span class="text-white">Roy</span>
+        </div>
 
-    <section class="hero">
-      <div class="hero-left">
-        <h1>Hi, I'm <span>Proshanto</span></h1>
+        <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+          <li class="nav-item text-purple-400">Home</li>
+          <li class="nav-item">About</li>
+          <li class="nav-item">Skills</li>
+          <li class="nav-item">Projects</li>
+          <li class="nav-item">Contact</li>
+        </ul>
+      </div>
+    </nav>
 
-        <h2>Software Engineering Student | C / C++ Focused</h2>
+    <section
+      class="flex flex-col-reverse md:flex-row items-center justify-between max-w-7xl mx-auto px-6 pt-40 pb-20"
+    >
+      <div class="md:w-1/2 space-y-6 text-center md:text-left">
+        <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">
+          Hi, I'm <br />
+          <span
+            class="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
+          >
+            Proshanto Kumar Roy
+          </span>
+        </h2>
 
-        <p>
+        <p class="text-xl text-green-400 font-semibold">
+          Software Engineering Student | C / C++ Focused
+        </p>
+
+        <p
+          class="text-gray-400 max-w-lg mx-auto md:mx-0 leading-relaxed text-lg"
+        >
           I build logic-driven programs using C and C++, with a strong focus on
           clean, structured, and efficient code.
         </p>
 
-        <div class="socials">
-          <a href="https://github.com/proshanto-kumar-roy" target="_blank"
-            >GitHub</a
-          >
-          <a href="https://linkedin.com/in/proshantokumarroy" target="_blank"
-            >LinkedIn</a
-          >
-          <a href="mailto:proshantokumarroy633@gmail.com">Email</a>
+        <div class="flex gap-5 justify-center md:justify-start text-2xl mt-4">
+          <a
+            href="#"
+            class="text-gray-400 hover:text-white transition hover:scale-110"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="#"
+            class="text-blue-500 hover:text-blue-400 transition hover:scale-110"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="#"
+            class="text-sky-400 hover:text-sky-300 transition hover:scale-110"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            href="#"
+            class="text-pink-500 hover:text-pink-400 transition hover:scale-110"
+            ><i class="fab fa-instagram"></i
+          ></a>
         </div>
 
-        <div class="hero-buttons">
-          <a href="#" class="btn primary">Get Resume</a>
-          <a href="https://github.com/proshanto-kumar-roy" class="btn outline"
-            >GitHub</a
+        <div class="mt-8">
+          <button
+            class="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white font-bold shadow-lg hover:shadow-purple-500/50 transition transform hover:-translate-y-1"
           >
+            Check Resume <i class="fas fa-arrow-right ml-2"></i>
+          </button>
         </div>
       </div>
 
-      <div class="hero-right">
-        <div class="code-box">
-          <div class="code-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
+      <div class="md:w-1/2 flex justify-center w-full mt-10 md:mt-0">
+        <div
+          class="bg-[#1e293b] border border-gray-700 rounded-xl p-6 shadow-2xl w-full max-w-md relative hover:scale-[1.02] transition duration-500"
+        >
+          <div class="flex gap-2 mb-4 border-b border-gray-700 pb-3">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
           </div>
 
-          <pre class="code-box">
-const <span class="key">programmer</span> = {
-  name: <span class="name">'Proshanto Kumar Roy'</span>,
-  role: <span class="role">'Software Engineering Student'</span>,
-  skills: <span class="skills">['C', 'C++', 'Git', 'HTML', 'JavaScript']</span>,
-  location: <span class="location">'Greater Noida, India'</span>,
-  hireable: <span class="hireable">true</span>
+          <pre class="font-mono text-sm leading-7 overflow-x-auto">
+<code class="text-gray-300">
+<span class="text-purple-400">const</span> <span class="text-yellow-300">Proshanto</span> = {
+  <span class="text-gray-400">fullName:</span> <span class="text-green-400">'Proshanto Kumar Roy'</span>,
+  <span class="text-gray-400">location:</span> <span class="text-green-400">'Greater Noida, India'</span>,
+  <span class="text-gray-400">skills:</span> [
+    <span class="text-green-400">'C'</span>, <span class="text-green-400">'C++'</span>, <span class="text-green-400">'Git'</span>,
+    <span class="text-green-400">'HTML'</span>, <span class="text-green-400">'JavaScript'</span>
+  ],
+  <span class="text-gray-400">hardWorker:</span> <span class="text-blue-400">true</span>,
+  <span class="text-gray-400">problemSolver:</span> <span class="text-blue-400">true</span>,
+  <span class="text-gray-400">hireable:</span> <span class="text-orange-400">function</span>() {
+    <span class="text-purple-400">return</span> <span class="text-blue-400">true</span>;
+  }
 };
-</pre>
+</code>
+                </pre>
         </div>
       </div>
     </section>
-
-    <section id="about" class="section">
-      <h3 class="section-title">Who am I?</h3>
-
-      <div class="about-simple">
-        <p>
-          I am a Software Engineering student pursuing Computer Science and
-          Engineering at Sharda University. I have a strong interest in
-          problem-solving and system-oriented programming, particularly using C
-          and C++.
-          <br /><br />
-          I focus on writing clean, structured, and efficient code while
-          continuously strengthening my understanding of core programming
-          concepts. Alongside my academic journey, I actively build and share
-          projects on GitHub.
-        </p>
-
-        <img src="profile.jpg" alt="Proshanto Kumar Roy" />
-      </div>
-    </section>
-
-    <section id="skills" class="section reveal">
-      <h3 class="section-title">Skills & Technologies</h3>
-
-      <div class="skills-grid">
-        <div class="skill-card">C, C++, JavaScript</div>
-        <div class="skill-card">HTML, CSS</div>
-        <div class="skill-card">Git, GitHub</div>
-      </div>
-    </section>
-
-    <section id="projects" class="section reveal">
-      <h3 class="section-title">Projects</h3>
-
-      <div class="projects-grid">
-        <div class="project-card">
-          <h4>Student Result Management System</h4>
-          <p>C++ console-based system to manage student academic records.</p>
-          <span>C++</span>
-        </div>
-
-        <div class="project-card">
-          <h4>Personal Portfolio Website</h4>
-          <p>Responsive portfolio website using HTML, CSS, and JavaScript.</p>
-          <span>HTML • CSS • JavaScript</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section reveal">
-      <h3 class="section-title">Let’s Connect</h3>
-      <p class="contact-text">
-        Interested in collaboration or opportunities? Feel free to reach out —
-        I’ll respond as soon as possible.
-      </p>
-
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5"></textarea>
-        <button type="submit">Send Message →</button>
-      </form>
-    </section>
-
-    <footer>© 2025 Proshanto Kumar Roy</footer>
-
-    <script src="script.js"></script>
   </body>
 </html>
