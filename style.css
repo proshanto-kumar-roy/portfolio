@@ -457,3 +457,46 @@ code {
   color: #a0aec0;
   font-size: 0.9rem;
 }
+
+/* আইকন কন্টেইনার */
+.icons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* আইকনগুলোর মাঝখানের দূরত্ব */
+  margin-top: 20px;
+}
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #cbd5e1; /* লেখার রং (Git, GitHub লেখাগুলো) */
+  font-size: 14px;
+}
+
+.icon-box i {
+  font-size: 40px; /* আইকনের সাইজ */
+  transition: transform 0.3s ease;
+}
+
+.icon-box:hover i {
+  transform: translateY(-5px); /* মাউস নিলে লাফাবে */
+}
+
+/* --- নির্দিষ্ট কালার কোড --- */
+
+/* ১. Git - কমলা রং */
+.icon-git {
+  color: #f05032;
+}
+
+/* ২. GitHub - সাদা রং (যাতে কালো ব্যাকগ্রাউন্ডে দেখা যায়) */
+.icon-github {
+  color: #ffffff;
+}
+
+/* ৩. VS Code - নীল রং */
+.icon-vscode {
+  color: #007acc;
+}
