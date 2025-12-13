@@ -3,138 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proshanto Kumar Roy | Software Engineering Student</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Proshanto | Software Engineering Student</title>
+
+    <!-- Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fira+Code&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- NAV -->
-    <nav>
-      <h2>Proshanto</h2>
-      <div class="nav-links">
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="logo">Proshanto</div>
+      <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section class="hero">
       <div class="hero-left">
         <h1>Hi, I'm <span>Proshanto</span></h1>
-        <h3>Software Engineering Student | C / C++ Focused</h3>
+
+        <h2>Software Engineering Student | C / C++ Focused</h2>
+
         <p>
           I build logic-driven programs using C and C++, with a focus on clean
           and structured code.
         </p>
 
         <div class="hero-buttons">
-          <a href="resume.pdf" class="btn">Get Resume</a>
-          <a
-            href="https://github.com/proshanto-kumar-roy"
-            target="_blank"
-            class="btn-outline"
+          <a href="resume.pdf" class="btn primary">Get Resume</a>
+          <a href="https://github.com/proshanto-kumar-roy" class="btn outline"
             >GitHub</a
           >
         </div>
       </div>
 
       <div class="hero-right">
-        <pre>
-const programmer = {
+        <div class="code-box">
+          <pre><code>const programmer = {
   name: "Proshanto Kumar Roy",
   role: "Software Engineering Student",
   skills: ["C", "C++", "Git", "HTML", "JavaScript"],
   location: "Greater Noida, India",
   hireable: true
-};
-    </pre
-        >
+};</code></pre>
+        </div>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section">
-      <h2>Who am I?</h2>
-      <p>
+      <h3 class="section-title">Who am I?</h3>
+      <p class="about-text">
         I am a Software Engineering student currently pursuing my degree in
         Computer Science and Engineering at Sharda University. I have a strong
         interest in problem-solving and system-oriented programming,
         particularly using C and C++.
-      </p>
-      <p>
+        <br /><br />
         I focus on writing clean, structured, and efficient code while
         continuously strengthening my understanding of core programming concepts
-        and computational thinking.
-      </p>
-      <p>
-        Alongside my academic journey, I actively build and share projects on
-        GitHub, using it as a platform to document my learning and improve
-        version control skills.
+        and computational thinking. Alongside my academic journey, I actively
+        build and share projects on GitHub to document my learning and improve
+        my version control skills.
       </p>
     </section>
 
     <!-- SKILLS -->
     <section id="skills" class="section">
-      <h2>Skills & Technologies</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Programming Languages</h3>
-          <p>C</p>
-          <p>C++</p>
-          <p>JavaScript</p>
+      <h3 class="section-title">Skills & Technologies</h3>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4>Programming Languages</h4>
+          <p>C, C++, JavaScript</p>
         </div>
 
-        <div class="card">
-          <h3>Web Technologies</h3>
-          <p>HTML</p>
-          <p>CSS</p>
+        <div class="skill-card">
+          <h4>Web Technologies</h4>
+          <p>HTML, CSS</p>
         </div>
 
-        <div class="card">
-          <h3>Tools</h3>
-          <p>Git</p>
-          <p>GitHub</p>
+        <div class="skill-card">
+          <h4>Tools</h4>
+          <p>Git, GitHub</p>
         </div>
       </div>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Student Result Management System</h3>
+      <h3 class="section-title">Projects</h3>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <h4>Student Result Management System</h4>
           <p>
-            A C++ based console application designed to manage and organize
-            student academic records efficiently.
+            A C++ based console application to manage and organize student
+            academic records efficiently.
           </p>
-          <span class="tag">C++</span>
-          <p class="repo">GitHub: N/A</p>
+          <span>C++</span>
         </div>
 
-        <div class="card">
-          <h3>Personal Portfolio Website</h3>
+        <div class="project-card">
+          <h4>Personal Portfolio Website</h4>
           <p>
-            A responsive personal portfolio website built using HTML, CSS, and
-            JavaScript to showcase skills and projects.
+            A responsive personal website built using HTML, CSS, and JavaScript
+            to showcase skills and projects.
           </p>
-          <span class="tag">HTML • CSS • JavaScript</span>
-          <p class="repo">GitHub: N/A</p>
+          <span>HTML • CSS • JavaScript</span>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="section">
-      <h2>Let’s Connect</h2>
-      <p>
+      <h3 class="section-title">Let’s Connect</h3>
+      <p class="contact-text">
         Interested in collaboration, projects, or opportunities? Feel free to
         reach out — I’ll respond as soon as possible.
       </p>
@@ -142,23 +134,12 @@ const programmer = {
       <form class="contact-form">
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message"></textarea>
-        <button type="submit">Get in Touch →</button>
+        <textarea placeholder="Your Message" rows="5"></textarea>
+        <button type="submit">Send Message →</button>
       </form>
     </section>
 
-    <footer>
-      <p>© 2025 Proshanto Kumar Roy</p>
-      <div class="footer-links">
-        <a href="mailto:proshantokumarroy633@gmail.com">Email</a>
-        <a href="https://linkedin.com/in/proshantokumarroy" target="_blank"
-          >LinkedIn</a
-        >
-        <a href="https://github.com/proshanto-kumar-roy" target="_blank"
-          >GitHub</a
-        >
-      </div>
-    </footer>
+    <footer>© 2025 Proshanto Kumar Roy</footer>
 
     <script src="script.js"></script>
   </body>
