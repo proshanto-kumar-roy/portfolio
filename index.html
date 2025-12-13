@@ -3,121 +3,258 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proshanto | Software Engineering Student</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <title>Proshanto Kumar Roy | Portfolio</title>
     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="bg-[#0f172a] text-white overflow-x-hidden font-sans">
-    <nav
-      class="fixed top-0 w-full bg-[#0f172a]/90 backdrop-blur-sm border-b border-gray-800 z-50"
-    >
-      <div
-        class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center"
-      >
-        <div class="text-2xl font-bold text-green-400 tracking-wide">
-          Proshanto <span class="text-white">Roy</span>
-        </div>
+    <style>
+      /* ১. গ্লোবাল স্টাইল (পুরো সাইটের বেসিক কালার) */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
 
-        <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-          <li class="nav-item text-purple-400">Home</li>
-          <li class="nav-item">About</li>
-          <li class="nav-item">Skills</li>
-          <li class="nav-item">Projects</li>
-          <li class="nav-item">Contact</li>
-        </ul>
-      </div>
+      body {
+        background-color: #0f172a; /* দর্শনের সাইটের মতো ডার্ক ব্লু ব্যাকগ্রাউন্ড */
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+
+      /* ২. নেভিগেশন বার (Navbar) */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10%;
+        background: rgba(15, 23, 42, 0.9);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: #22c55e; /* দর্শনের নামের সবুজ রঙ */
+        text-decoration: none;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-links a {
+        color: #e2e8f0;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #22c55e;
+      }
+
+      /* ৩. হিরো সেকশন (মেইন পার্ট) */
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+        padding: 0 10%;
+        padding-top: 80px; /* Navbar-এর জন্য জায়গা */
+        background: radial-gradient(
+          circle at 50% 50%,
+          #1e293b 0%,
+          #0f172a 100%
+        );
+      }
+
+      .hero-text {
+        flex: 1;
+      }
+
+      .hero-text h3 {
+        font-size: 32px;
+        font-weight: 600;
+      }
+
+      .hero-text h1 {
+        font-size: 50px;
+        font-weight: 700;
+        margin: 10px 0;
+      }
+
+      .hero-text .name-highlight {
+        background: linear-gradient(
+          to right,
+          #a855f7,
+          #ec4899
+        ); /* নাম বা বিশেষ লেখার জন্য গ্রেডিয়েন্ট */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-text p {
+        color: #94a3b8;
+        font-size: 18px;
+        margin-bottom: 30px;
+        max-width: 500px;
+      }
+
+      .btn {
+        padding: 12px 30px;
+        background: linear-gradient(90deg, #a855f7, #ec4899);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+      }
+
+      /* ৪. কোড বক্স ডিজাইন (ডানদিকের অংশ) */
+      .code-box-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        perspective: 1000px; /* 3D ভাব আনার জন্য */
+      }
+
+      .code-box {
+        background: #1e293b; /* বক্সের ব্যাকগ্রাউন্ড */
+        border: 1px solid #334155;
+        border-radius: 12px;
+        width: 450px;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.2); /* হালকা পার্পল গ্লো */
+        font-family: "Fira Code", monospace;
+        position: relative;
+      }
+
+      /* কোড বক্সের উপরের ৩টি ডট */
+      .window-controls {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+
+      .red {
+        background-color: #ff5f56;
+      }
+      .yellow {
+        background-color: #ffbd2e;
+      }
+      .green {
+        background-color: #27c93f;
+      }
+
+      /* কোডের লেখাগুলো */
+      pre {
+        color: #e2e8f0;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .keyword {
+        color: #ff79c6;
+      } /* const, return */
+      .variable {
+        color: #f1fa8c;
+      } /* Programmer */
+      .property {
+        color: #8be9fd;
+      } /* name, skills */
+      .string {
+        color: #50fa7b;
+      } /* 'text' */
+      .boolean {
+        color: #bd93f9;
+      } /* true/false */
+
+      /* রেসপন্সিভ ডিজাইন (মোবাইলের জন্য) */
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+          height: auto;
+          padding: 100px 5%;
+        }
+
+        .code-box-container {
+          margin-top: 50px;
+          width: 100%;
+        }
+
+        .code-box {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#" class="logo">Proshanto Roy</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
 
-    <section
-      class="flex flex-col-reverse md:flex-row items-center justify-between max-w-7xl mx-auto px-6 pt-40 pb-20"
-    >
-      <div class="md:w-1/2 space-y-6 text-center md:text-left">
-        <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">
-          Hi, I'm <br />
-          <span
-            class="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
-          >
-            Proshanto Kumar Roy
-          </span>
-        </h2>
-
-        <p class="text-xl text-green-400 font-semibold">
-          Software Engineering Student | C / C++ Focused
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h3>Hi, I'm</h3>
+        <h1 class="name-highlight">Proshanto Kumar Roy</h1>
+        <p>
+          Software Engineering Student | C/C++ Focused <br />
+          I build logic-driven programs with a focus on clean & structured code.
         </p>
-
-        <p
-          class="text-gray-400 max-w-lg mx-auto md:mx-0 leading-relaxed text-lg"
-        >
-          I build logic-driven programs using C and C++, with a strong focus on
-          clean, structured, and efficient code.
-        </p>
-
-        <div class="flex gap-5 justify-center md:justify-start text-2xl mt-4">
-          <a
-            href="#"
-            class="text-gray-400 hover:text-white transition hover:scale-110"
-            ><i class="fab fa-github"></i
-          ></a>
-          <a
-            href="#"
-            class="text-blue-500 hover:text-blue-400 transition hover:scale-110"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a
-            href="#"
-            class="text-sky-400 hover:text-sky-300 transition hover:scale-110"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a
-            href="#"
-            class="text-pink-500 hover:text-pink-400 transition hover:scale-110"
-            ><i class="fab fa-instagram"></i
-          ></a>
-        </div>
-
-        <div class="mt-8">
-          <button
-            class="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full text-white font-bold shadow-lg hover:shadow-purple-500/50 transition transform hover:-translate-y-1"
-          >
-            Check Resume <i class="fas fa-arrow-right ml-2"></i>
-          </button>
+        <div style="display: flex; gap: 15px">
+          <a href="#" class="btn">Check Resume ➔</a>
         </div>
       </div>
 
-      <div class="md:w-1/2 flex justify-center w-full mt-10 md:mt-0">
-        <div
-          class="bg-[#1e293b] border border-gray-700 rounded-xl p-6 shadow-2xl w-full max-w-md relative hover:scale-[1.02] transition duration-500"
-        >
-          <div class="flex gap-2 mb-4 border-b border-gray-700 pb-3">
-            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+      <div class="code-box-container">
+        <div class="code-box">
+          <div class="window-controls">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
           </div>
 
-          <pre class="font-mono text-sm leading-7 overflow-x-auto">
-<code class="text-gray-300">
-<span class="text-purple-400">const</span> <span class="text-yellow-300">Proshanto</span> = {
-  <span class="text-gray-400">fullName:</span> <span class="text-green-400">'Proshanto Kumar Roy'</span>,
-  <span class="text-gray-400">location:</span> <span class="text-green-400">'Greater Noida, India'</span>,
-  <span class="text-gray-400">skills:</span> [
-    <span class="text-green-400">'C'</span>, <span class="text-green-400">'C++'</span>, <span class="text-green-400">'Git'</span>,
-    <span class="text-green-400">'HTML'</span>, <span class="text-green-400">'JavaScript'</span>
+          <pre><code><span class="keyword">const</span> <span class="variable">Proshanto</span> = {
+  <span class="property">fullName</span>: <span class="string">'Proshanto Kumar Roy'</span>,
+  <span class="property">location</span>: <span class="string">'Greater Noida, India'</span>,
+  <span class="property">skills</span>: [
+    <span class="string">'C'</span>, <span class="string">'C++'</span>, <span class="string">'Git'</span>,
+    <span class="string">'HTML'</span>, <span class="string">'JavaScript'</span>
   ],
-  <span class="text-gray-400">hardWorker:</span> <span class="text-blue-400">true</span>,
-  <span class="text-gray-400">problemSolver:</span> <span class="text-blue-400">true</span>,
-  <span class="text-gray-400">hireable:</span> <span class="text-orange-400">function</span>() {
-    <span class="text-purple-400">return</span> <span class="text-blue-400">true</span>;
+  <span class="property">hardWorker</span>: <span class="boolean">true</span>,
+  <span class="property">problemSolver</span>: <span class="boolean">true</span>,
+  <span class="property">hireable</span>: <span class="keyword">function</span>() {
+    <span class="keyword">return</span> <span class="boolean">true</span>;
   }
-};
-</code>
-                </pre>
+};</code></pre>
         </div>
       </div>
     </section>
