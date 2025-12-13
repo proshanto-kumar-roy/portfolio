@@ -787,3 +787,150 @@ code {
     margin-top: 10px;
   }
 }
+/* --- কন্টাক্ট সেকশন --- */
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto 80px; /* নিচে ফুটারের জন্য ফাঁকা */
+  padding: 0 20px;
+}
+
+/* মেইন বক্স ডিজাইন */
+.contact-box {
+  background: #0f172a; /* খুব গাঢ় নীল */
+  border: 1px solid rgba(168, 85, 247, 0.3); /* হালকা বেগুনি বর্ডার */
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.15); /* সফট গ্লো */
+}
+
+.contact-subtitle {
+  color: #e2e8f0;
+  font-size: 16px;
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+
+/* ইনপুট গ্রুপ */
+.input-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  flex: 1;
+  text-align: left;
+}
+
+/* লেবেল */
+.input-group label {
+  display: block;
+  color: #94a3b8;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.input-group label i {
+  color: #38bdf8; /* আইকন কালার নীল */
+  margin-right: 5px;
+}
+
+/* ইনপুট ফিল্ড স্টাইল */
+input,
+textarea {
+  width: 100%;
+  background: transparent; /* ট্রান্সপারেন্ট */
+  border: 1px solid #334155;
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+/* ফোকাস করলে বর্ডার কালার হবে */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #a855f7; /* বেগুনি বর্ডার */
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+}
+
+textarea {
+  resize: vertical; /* ইউজার সাইজ ছোটবড় করতে পারবে */
+}
+
+/* সেন্ড বাটন */
+.send-btn {
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease;
+}
+
+.send-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+}
+
+/* রেস্পন্সিভ (মোবাইলে ইনপুট নিচে নিচে আসবে) */
+@media (max-width: 600px) {
+  .input-row {
+    flex-direction: column;
+  }
+}
+
+/* --- ফুটার --- */
+.footer {
+  background: #020617; /* একদম কালো */
+  padding: 20px 0;
+  border-top: 1px solid #1e293b;
+  margin-top: 50px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.highlight-name {
+  color: #38bdf8; /* নামটা নীল হবে */
+  font-weight: 600;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
