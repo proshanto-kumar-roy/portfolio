@@ -534,3 +534,47 @@ code {
   color: #a0aec0;
   font-size: 0.9rem;
 }
+
+/* পুরো হেডার কন্টেইনার */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  margin: 80px 0 50px; /* উপরে নিচে ফাঁকা */
+}
+
+/* পেছনের আবছা লাইনটা (Fading Line) */
+.section-header .line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  /* মাঝখানে বেগুনি, দুই পাশে মিলিয়ে যাবে */
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.5) 0%,
+    transparent 80%
+  );
+  z-index: 1;
+}
+
+/* মাঝখানের টেক্সট বা বটন ডিজাইন */
+.section-title {
+  position: relative;
+  z-index: 2; /* লাইনের উপরে থাকবে */
+  background: #0f172a; /* গাঢ় নীল ব্যাকগ্রাউন্ড */
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 30px; /* বাটনের সাইজ */
+  border-radius: 50px; /* গোল শেপ (Pill shape) */
+
+  /* বর্ডার এবং গ্লো এফেক্ট */
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3),
+    inset 0 0 10px rgba(139, 92, 246, 0.1);
+
+  /* টেক্সট যাতে এক লাইনে থাকে */
+  white-space: nowrap;
+}
