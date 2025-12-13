@@ -457,3 +457,8 @@ code {
   color: #a0aec0;
   font-size: 0.9rem;
 }
+
+/* শুধু GitHub আইকনের জন্য */
+.fa-github {
+  color: #ffffff !important;
+}
