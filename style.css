@@ -306,7 +306,7 @@ code {
   color: #ffffff;
 } /* fullName, skills (সাদা) */
 .string {
-  color: #98c379;
+  color: #60cd13;
 } /* 'Value' (সবুজ) */
 .boolean {
   color: #d19a66;
@@ -347,4 +347,25 @@ code {
   50% {
     opacity: 0;
   }
+}
+
+.social-links {
+  display: flex;
+  gap: 20px; /* আইকনগুলোর মাঝখানের দূরত্ব */
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+.social-icon {
+  font-size: 24px; /* আইকনের সাইজ */
+  color: #a8b2d1; /* নরমাল অবস্থায় হালকা কালার */
+  transition: all 0.3s ease; /* স্মুথ ট্রানজিশন */
+  display: inline-block;
+}
+
+/* মাউস হোভার করলে যা হবে (দর্শনের স্টাইল) */
+.social-icon:hover {
+  color: #64ffda; /* সেই নিওন গ্রিন কালার */
+  transform: translateY(-3px); /* একটু উপরে ভেসে উঠবে */
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.5); /* হালকা গ্লো */
 }
