@@ -311,3 +311,25 @@ code {
 .boolean {
   color: #d19a66;
 } /* true (কমলা) */
+
+/* কার্সার অ্যানিমেশন (Blink Effect) */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* কার্সারের ডিজাইন */
+.cursor {
+  display: inline-block;
+  width: 3px; /* কার্সার কতটা মোটা হবে */
+  height: 1em; /* লেখার সাইজ অনুযায়ী লম্বা হবে */
+  background-color: #ec4899; /* গোলাপি রং (আপনার থিম অনুযায়ী) */
+  margin-left: 5px; /* লেখা থেকে একটু দূরে */
+  animation: blink 1s step-end infinite; /* ব্লিঙ্ক করার স্পিড */
+  vertical-align: text-bottom; /* লাইন বরাবর ঠিকঠাক বসবে */
+}
