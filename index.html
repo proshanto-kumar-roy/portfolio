@@ -429,24 +429,5 @@
         setTimeout(typeEffect, 1000); // ১ সেকেন্ড পর শুরু
       });
     </script>
-
-    <script>
-      // যে বক্সগুলোতে স্পটলাইট চান
-      const cards = document.querySelectorAll(
-        ".skill-card, .project-card, .changing-box, .contact-box, .timeline-content"
-      );
-
-      cards.forEach((card) => {
-        card.onmousemove = function (e) {
-          // কার্ডের মধ্যে মাউসের পজিশন বের করা
-          const x = e.pageX - card.offsetLeft;
-          const y = e.pageY - card.offsetTop;
-
-          // CSS-কে পজিশন জানিয়ে দেওয়া
-          card.style.setProperty("--x", x + "px");
-          card.style.setProperty("--y", y + "px");
-        };
-      });
-    </script>
   </body>
 </html>
