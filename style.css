@@ -999,3 +999,34 @@ textarea {
     opacity: 0;
   }
 }
+
+/* --- সব বক্সের গ্লোয়িং এফেক্ট একসাথে --- */
+
+/* ১. সব বক্সের নাম এখানে কমা (,) দিয়ে লেখা হয়েছে */
+.skill-card,
+.project-card,
+.timeline-content,
+.contact-box,
+.changing-box {
+  /* স্মুথ ট্রানজিশন */
+  transition: all 0.3s ease-in-out;
+  /* ডিফল্ট হালকা বর্ডার */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ২. হোভার করলে (মাউস নিলে) যা হবে */
+.skill-card:hover,
+.project-card:hover,
+.timeline-content:hover,
+.contact-box:hover,
+.changing-box:hover {
+  /* বক্স একটু উপরে উঠবে */
+  transform: translateY(-5px);
+
+  /* বর্ডারের রং পাল্টে বেগুনি/নীল হবে */
+  border-color: #a855f7;
+
+  /* ডবল গ্লো এফেক্ট (ভিতরে বেগুনি, বাইরে নীল) */
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.6),
+    /* উজ্জ্বল বেগুনি আভা */ 0 0 30px rgba(59, 130, 246, 0.4); /* সফট নীল আভা */
+}
