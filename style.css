@@ -935,103 +935,67 @@ textarea {
   color: #ffffff;
 }
 
-/* এনিমেটেড বক্স (সাইজ ছোট-বড় হবে) */
+/* --- Always Container (Grid দিয়ে স্থির রাখা হয়েছে) --- */
+.always-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* সমান দুই ভাগ */
+  align-items: center;
+  gap: 15px;
+  margin: 60px 0;
+  width: 100%;
+  min-height: 60px; /* একটা ফিক্সড হাইট রাখা ভালো */
+}
+
+/* বাম পাশের স্থির লেখা */
+.static-text {
+  text-align: right;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* --- ডান পাশের রঙিন বক্স (আয়তাকার) --- */
 .changing-box {
-  height: 50px;
-  /* width এখন আর ফিক্সড নয়, এনিমেশন দিয়ে বদলাবে */
+  justify-self: left; /* বামে ফিক্সড থাকবে */
   background: linear-gradient(90deg, #a855f7, #ec4899);
-  border-radius: 30px;
+  padding: 10px 25px; /* ভেতরে জায়গা */
   display: flex;
   align-items: center;
-  justify-content: center;
   box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
   position: relative;
-  overflow: hidden;
 
-  /* বক্সের সাইজ পরিবর্তনের এনিমেশন */
-  animation: resizeBox 8s infinite cubic-bezier(0.1, 0, 0.1, 1);
+  /* আয়তাকার করার জন্য বর্ডার রেডিয়াস কমানো হলো */
+  border-radius: 10px; /* 30px এর বদলে 10px */
+
+  /* হাইট আর ফিক্সড নয়, লেখার সাথে বাড়বে */
+  height: auto;
+  min-height: 50px;
 }
 
-/* শব্দের লিস্ট */
-.word-list {
-  display: block;
-  text-align: center;
-  /* লেখার স্লাইড এনিমেশন */
-  animation: scrollWords 8s infinite cubic-bezier(0.1, 0, 0.1, 1);
-}
-
-/* প্রতিটি শব্দ */
-.word {
-  display: block;
-  height: 50px;
-  line-height: 50px;
+/* যে লেখাটা টাইপ হবে */
+.typing-text {
   color: #ffffff;
   font-weight: bold;
   font-size: 22px;
-  margin: 0;
-  white-space: nowrap;
+  white-space: nowrap; /* লেখা ভাঙবে না */
 }
 
-/* --- ১. লেখার এনিমেশন (নিচ থেকে উপরে) --- */
-@keyframes scrollWords {
-  0%,
-  15% {
-    transform: translateY(0);
-  } /* Innovating */
-  20%,
-  35% {
-    transform: translateY(-50px);
-  } /* Learning */
-  40%,
-  55% {
-    transform: translateY(-100px);
-  } /* Growing */
-  60%,
-  75% {
-    transform: translateY(-150px);
-  } /* Creating */
-  80%,
-  95% {
-    transform: translateY(-200px);
-  } /* Innovating */
-  100% {
-    transform: translateY(0);
-  }
+/* ব্লিঙ্কিং কার্সার (|) */
+.cursor {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 5px;
+  animation: blink 1s step-end infinite;
 }
 
-/* --- ২. বক্সের সাইজ এনিমেশন (লেখার সাথে সাথে ছোট-বড় হবে) --- */
-@keyframes resizeBox {
-  /* Innovating (বড় শব্দ) -> বক্স চওড়া হবে */
-  0%,
-  15% {
-    width: 210px;
+/* কার্সার ব্লিঙ্ক করার এনিমেশন */
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
   }
-
-  /* Learning (মাঝারি শব্দ) -> বক্স একটু ছোট হবে */
-  20%,
-  35% {
-    width: 170px;
-  }
-
-  /* Growing (ছোট শব্দ) -> বক্স আরও ছোট হবে */
-  40%,
-  55% {
-    width: 150px;
-  }
-
-  /* Creating (মাঝারি শব্দ) -> আবার একটু বড় হবে */
-  60%,
-  75% {
-    width: 170px;
-  }
-
-  /* Innovating (আবার বড়) */
-  80%,
-  95% {
-    width: 210px;
-  }
-
-  100% {
-    width: 210px;
+  50% {
+    opacity: 0;
   }
 }
