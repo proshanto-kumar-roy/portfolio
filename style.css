@@ -1120,3 +1120,90 @@ textarea {
     text-align: center;
   }
 }
+
+/* --- Navbar সাধারণ স্টাইল --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #0f172a;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  color: #38bdf8;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #a855f7;
+}
+
+/* মেনু আইকন (ডেস্কটপে লুকানো থাকবে) */
+.menu-icon {
+  display: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* --- মোবাইল রেস্পন্সিভ কোড --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px; /* মোবাইলে প্যাডিং কমানো হলো */
+  }
+
+  /* মেনু আইকন দেখা যাবে */
+  .menu-icon {
+    display: block;
+  }
+
+  /* মেনু লিংকগুলো লুকানো থাকবে এবং নিচে নামবে */
+  .nav-links {
+    display: none; /* শুরুতে লুকানো */
+    flex-direction: column; /* নিচে নিচে সাজবে */
+    position: absolute;
+    top: 70px; /* আইকনের নিচে */
+    left: 0;
+    width: 100%;
+    background: #1e293b; /* আলাদা ব্যাকগ্রাউন্ড */
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  /* জাভাস্ক্রিপ্ট দিয়ে ক্লাস যোগ করলে মেনু দেখা যাবে */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* হিরো সেকশনের কোড বক্স ঠিক করা */
+  .hero-container,
+  .code-box {
+    width: 95% !important; /* স্ক্রিনের বাইরে যাবে না */
+    margin: 0 auto;
+    padding: 15px !important;
+  }
+}
