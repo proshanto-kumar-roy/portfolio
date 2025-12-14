@@ -1,21 +1,21 @@
-/* --- Basic Reset --- */
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
+  font-family: "Poppins", sans-serif; /* বা আপনার ফন্ট */
 
-body {
-  font-family: "Poppins", sans-serif;
-  /* Darshan-এর মতো গাঢ় ব্যাকগ্রাউন্ড এবং ওপরের গ্লো */
-  background-color: #0b0b13;
+  /* ব্যাকগ্রাউন্ড কালার এবং আভা */
+  background-color: #0f172a; /* মূল গাঢ় রং */
+
+  /* পার্পল আভাটি এখন ঠিক মাঝখানে এবং উপরে থাকবে */
   background-image: radial-gradient(
-    circle at 50% -10%,
-    #2d1b69 0%,
-    transparent 40%
+    circle at top center,
+    rgba(126, 34, 206, 0.3) 0%,
+    transparent 60%
   );
-  background-repeat: no-repeat;
-  color: white;
+
+  background-attachment: fixed; /* স্ক্রল করলেও ব্যাকগ্রাউন্ড নড়বে না */
+  background-size: cover;
+  overflow-x: hidden; /* ডানে-বামে স্ক্রল বার আসা বন্ধ করবে */
   min-height: 100vh;
 }
 
