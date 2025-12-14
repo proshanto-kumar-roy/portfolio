@@ -935,70 +935,103 @@ textarea {
   color: #ffffff;
 }
 
-/* কন্টেইনার */
-.always-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin: 60px 0;
-}
-
-/* "Always" লেখা */
-.static-text {
-  font-size: 26px;
-  font-weight: bold;
-  color: #ffffff;
-}
-
-/* রঙিন বক্স */
+/* --- ১. মেইন বক্স (যেটা ছোট-বড় হবে) --- */
 .changing-box {
   height: 50px;
-  min-width: 200px; /* ফিক্সড চওড়া, যাতে লেখা না কাটে */
   background: linear-gradient(90deg, #a855f7, #ec4899);
   border-radius: 30px;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* লেখার বাইরের অংশ দেখা যাবে না */
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+  position: relative;
+
+  /* বক্স রিসাইজ হওয়ার এনিমেশন */
+  animation: resizeBox 8s infinite cubic-bezier(0.7, 0, 0.3, 1);
 }
 
-/* শব্দের লিস্ট */
+/* --- ২. শব্দের লিস্ট (যেটা উপরে স্লাইড করবে) --- */
 .word-list {
+  display: block;
   text-align: center;
-  animation: scrollText 8s infinite ease-in-out;
+  /* লেখা স্লাইড হওয়ার এনিমেশন */
+  animation: scrollWords 8s infinite cubic-bezier(0.7, 0, 0.3, 1);
 }
 
-/* প্রতিটি শব্দ */
+/* --- ৩. প্রতিটি শব্দ --- */
 .word {
   display: block;
   height: 50px;
-  line-height: 55px; /* লেখাটিকে মাঝখানের একটু নিচে নামাতে */
+  line-height: 50px; /* লেখা একদম মাঝখানে রাখবে */
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 22px;
+  margin: 0;
+  padding: 0 20px; /* লেখার পাশে একটু প্যাডিং */
+  white-space: nowrap; /* লেখা ভাঙবে না */
 }
 
-/* এনিমেশন */
-@keyframes scrollText {
+/* --- ৪. লেখার স্লাইড এনিমেশন (Slide Up) --- */
+@keyframes scrollWords {
   0%,
-  20% {
+  15% {
     transform: translateY(0);
   } /* Innovating */
-  25%,
-  45% {
+  20%,
+  35% {
     transform: translateY(-50px);
   } /* Learning */
-  50%,
-  70% {
+  40%,
+  55% {
     transform: translateY(-100px);
   } /* Growing */
-  75%,
-  95% {
+  60%,
+  75% {
     transform: translateY(-150px);
   } /* Creating */
-  100% {
+  80%,
+  95% {
     transform: translateY(-200px);
-  } /* Innovating (Loop) */
+  } /* Innovating (শেষে) */
+  100% {
+    transform: translateY(0);
+  } /* রিসেট */
+}
+
+/* --- ৫. বক্সের সাইজ এনিমেশন (Resize) --- */
+@keyframes resizeBox {
+  /* Innovating (বড় শব্দ) -> বক্স চওড়া হবে */
+  0%,
+  15% {
+    width: 220px;
+  }
+
+  /* Learning (মাঝারি) -> বক্স একটু ছোট */
+  20%,
+  35% {
+    width: 180px;
+  }
+
+  /* Growing (ছোট) -> বক্স আরও ছোট */
+  40%,
+  55% {
+    width: 170px;
+  }
+
+  /* Creating (মাঝারি) -> আবার একটু বড় */
+  60%,
+  75% {
+    width: 180px;
+  }
+
+  /* Innovating (আবার বড়) */
+  80%,
+  95% {
+    width: 220px;
+  }
+
+  100% {
+    width: 220px;
+  }
 }
