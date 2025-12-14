@@ -935,44 +935,44 @@ textarea {
   color: #ffffff;
 }
 
-/* --- ১. মেইন বক্স (যেটা ছোট-বড় হবে) --- */
+/* এনিমেটেড বক্স (সাইজ ছোট-বড় হবে) */
 .changing-box {
   height: 50px;
+  /* width এখন আর ফিক্সড নয়, এনিমেশন দিয়ে বদলাবে */
   background: linear-gradient(90deg, #a855f7, #ec4899);
   border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* লেখার বাইরের অংশ দেখা যাবে না */
   box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
   position: relative;
+  overflow: hidden;
 
-  /* বক্স রিসাইজ হওয়ার এনিমেশন */
-  animation: resizeBox 8s infinite cubic-bezier(0.7, 0, 0.3, 1);
+  /* বক্সের সাইজ পরিবর্তনের এনিমেশন */
+  animation: resizeBox 8s infinite cubic-bezier(0.1, 0, 0.1, 1);
 }
 
-/* --- ২. শব্দের লিস্ট (যেটা উপরে স্লাইড করবে) --- */
+/* শব্দের লিস্ট */
 .word-list {
   display: block;
   text-align: center;
-  /* লেখা স্লাইড হওয়ার এনিমেশন */
-  animation: scrollWords 8s infinite cubic-bezier(0.7, 0, 0.3, 1);
+  /* লেখার স্লাইড এনিমেশন */
+  animation: scrollWords 8s infinite cubic-bezier(0.1, 0, 0.1, 1);
 }
 
-/* --- ৩. প্রতিটি শব্দ --- */
+/* প্রতিটি শব্দ */
 .word {
   display: block;
   height: 50px;
-  line-height: 50px; /* লেখা একদম মাঝখানে রাখবে */
+  line-height: 50px;
   color: #ffffff;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 22px;
   margin: 0;
-  padding: 0 20px; /* লেখার পাশে একটু প্যাডিং */
-  white-space: nowrap; /* লেখা ভাঙবে না */
+  white-space: nowrap;
 }
 
-/* --- ৪. লেখার স্লাইড এনিমেশন (Slide Up) --- */
+/* --- ১. লেখার এনিমেশন (নিচ থেকে উপরে) --- */
 @keyframes scrollWords {
   0%,
   15% {
@@ -993,45 +993,45 @@ textarea {
   80%,
   95% {
     transform: translateY(-200px);
-  } /* Innovating (শেষে) */
+  } /* Innovating */
   100% {
     transform: translateY(0);
-  } /* রিসেট */
+  }
 }
 
-/* --- ৫. বক্সের সাইজ এনিমেশন (Resize) --- */
+/* --- ২. বক্সের সাইজ এনিমেশন (লেখার সাথে সাথে ছোট-বড় হবে) --- */
 @keyframes resizeBox {
   /* Innovating (বড় শব্দ) -> বক্স চওড়া হবে */
   0%,
   15% {
-    width: 220px;
+    width: 210px;
   }
 
-  /* Learning (মাঝারি) -> বক্স একটু ছোট */
+  /* Learning (মাঝারি শব্দ) -> বক্স একটু ছোট হবে */
   20%,
   35% {
-    width: 180px;
-  }
-
-  /* Growing (ছোট) -> বক্স আরও ছোট */
-  40%,
-  55% {
     width: 170px;
   }
 
-  /* Creating (মাঝারি) -> আবার একটু বড় */
+  /* Growing (ছোট শব্দ) -> বক্স আরও ছোট হবে */
+  40%,
+  55% {
+    width: 150px;
+  }
+
+  /* Creating (মাঝারি শব্দ) -> আবার একটু বড় হবে */
   60%,
   75% {
-    width: 180px;
+    width: 170px;
   }
 
   /* Innovating (আবার বড়) */
   80%,
   95% {
-    width: 220px;
+    width: 210px;
   }
 
   100% {
-    width: 220px;
+    width: 210px;
   }
 }
