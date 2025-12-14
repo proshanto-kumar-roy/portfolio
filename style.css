@@ -1000,33 +1000,62 @@ textarea {
   }
 }
 
-/* --- সব বক্সের গ্লোয়িং এফেক্ট একসাথে --- */
+/* --- কার্ডের স্পটলাইট (Spotlight) এফেক্ট --- */
 
-/* ১. সব বক্সের নাম এখানে কমা (,) দিয়ে লেখা হয়েছে */
+/* ১. সব কার্ডের বেসিক ডিজাইন */
 .skill-card,
 .project-card,
-.timeline-content,
+.changing-box,
 .contact-box,
-.changing-box {
-  /* স্মুথ ট্রানজিশন */
-  transition: all 0.3s ease-in-out;
-  /* ডিফল্ট হালকা বর্ডার */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.timeline-content {
+  position: relative;
+  background: #111827; /* কার্ডের ব্যাকগ্রাউন্ড */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* হালকা বর্ডার */
+  border-radius: 12px; /* কোণা গোল */
+  overflow: hidden; /* আলো যাতে কার্ডের বাইরে না যায় */
+  transition: transform 0.3s ease; /* উপরে ওঠার এনিমেশন */
+  z-index: 1;
 }
 
-/* ২. হোভার করলে (মাউস নিলে) যা হবে */
+/* ২. মাউস নিলে কার্ড একটু উপরে উঠবে */
 .skill-card:hover,
 .project-card:hover,
-.timeline-content:hover,
+.changing-box:hover,
 .contact-box:hover,
-.changing-box:hover {
-  /* বক্স একটু উপরে উঠবে */
+.timeline-content:hover {
   transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
 
-  /* বর্ডারের রং পাল্টে বেগুনি/নীল হবে */
-  border-color: #a855f7;
+/* ৩. স্পটলাইট লেয়ার (যেটা মাউসের সাথে ঘুরবে) */
+.skill-card::before,
+.project-card::before,
+.changing-box::before,
+.contact-box::before,
+.timeline-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* মাউস যেখানে (--x, --y), সেখানে আলো জ্বলবে */
+  background: radial-gradient(
+    600px circle at var(--x) var(--y),
+    rgba(168, 85, 247, 0.25),
+    /* আলোর রং (বেগুনি) */ transparent 40% /* বাকি অংশ স্বচ্ছ */
+  );
+  opacity: 0; /* শুরুতে লুকানো থাকবে */
+  transition: opacity 0.5s;
+  pointer-events: none;
+  z-index: -1; /* লেখার নিচে থাকবে */
+}
 
-  /* ডবল গ্লো এফেক্ট (ভিতরে বেগুনি, বাইরে নীল) */
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.6),
-    /* উজ্জ্বল বেগুনি আভা */ 0 0 30px rgba(59, 130, 246, 0.4); /* সফট নীল আভা */
+/* ৪. মাউস নিলে আলো জ্বলে উঠবে */
+.skill-card:hover::before,
+.project-card:hover::before,
+.changing-box:hover::before,
+.contact-box:hover::before,
+.timeline-content:hover::before {
+  opacity: 1;
 }
