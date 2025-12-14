@@ -935,91 +935,70 @@ textarea {
   color: #ffffff;
 }
 
-/* মেইন কন্টেইনার (লেখা মাঝখানে আনার জন্য) */
+/* কন্টেইনার */
 .always-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px; /* "Always" এবং বক্সের মাঝখানের দূরত্ব */
-  margin: 60px 0; /* উপরে নিচে ফাঁকা */
+  gap: 15px;
+  margin: 60px 0;
 }
 
-/* "Always" লেখাটা */
+/* "Always" লেখা */
 .static-text {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   color: #ffffff;
 }
 
-/* রঙিন বক্স (যেটার ভেতর লেখা বদলাবে) */
+/* রঙিন বক্স */
 .changing-box {
-  height: 50px; /* বক্সের উচ্চতা */
-  overflow: hidden; /* এর বাইরে লেখা গেলে দেখা যাবে না */
-  background: linear-gradient(
-    90deg,
-    #a855f7,
-    #ec4899
-  ); /* পিঙ্ক-বেগুনি গ্রেডিয়েন্ট */
-  border-radius: 30px; /* গোল শেপ */
-  padding: 0 30px;
+  height: 50px;
+  min-width: 200px; /* ফিক্সড চওড়া, যাতে লেখা না কাটে */
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
   display: flex;
   align-items: center;
-  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4); /* গ্লো এফেক্ট */
+  justify-content: center;
 }
 
-/* শব্দগুলোর লিস্ট এবং এনিমেশন */
+/* শব্দের লিস্ট */
 .word-list {
-  display: flex;
-  flex-direction: column; /* লেখাগুলো নিচে নিচে থাকবে */
-  animation: scrollWords 8s infinite cubic-bezier(0.1, 0, 0.1, 1);
+  text-align: center;
+  animation: scrollText 8s infinite ease-in-out;
 }
 
 /* প্রতিটি শব্দ */
 .word {
-  height: 50px; /* বক্সের হাইটের সমান হতে হবে */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  height: 50px;
+  line-height: 55px; /* লেখাটিকে মাঝখানের একটু নিচে নামাতে */
   color: #ffffff;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
 }
 
-/* এনিমেশন (লেখা নিচ থেকে উপরে উঠবে) */
-@keyframes scrollWords {
-  0% {
-    transform: translateY(0);
-  }
-
-  /* Innovating (প্রথম শব্দ) */
+/* এনিমেশন */
+@keyframes scrollText {
+  0%,
   20% {
     transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-50px);
-  } /* পরের শব্দে যাবে */
-
-  /* Learning */
+  } /* Innovating */
+  25%,
   45% {
     transform: translateY(-50px);
-  }
-  50% {
-    transform: translateY(-100px);
-  }
-
-  /* Growing */
+  } /* Learning */
+  50%,
   70% {
     transform: translateY(-100px);
-  }
-  75% {
-    transform: translateY(-150px);
-  }
-
-  /* Creating */
+  } /* Growing */
+  75%,
   95% {
     transform: translateY(-150px);
-  }
+  } /* Creating */
   100% {
     transform: translateY(-200px);
-  } /* শেষে আবার Innovating-এ ফিরবে */
+  } /* Innovating (Loop) */
 }
