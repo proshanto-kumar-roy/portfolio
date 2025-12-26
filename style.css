@@ -7,29 +7,16 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  /* Darshan-এর মতো গাঢ় ব্যাকগ্রাউন্ড এবং ওপরের গ্লো */
   background-color: #0b0b13;
+  background-image: radial-gradient(
+    circle at 50% -10%,
+    #2d1b69 0%,
+    transparent 40%
+  );
+  background-repeat: no-repeat;
   color: white;
   min-height: 100vh;
-  position: relative;
-  overflow-x: hidden; /* মোবাইলে ডানে-বামে স্ক্রল বন্ধ */
-}
-
-/* --- Mobile Fixed Background Fix --- */
-/* মোবাইলে ব্যাকগ্রাউন্ড যাতে কেটে না যায় তার জন্য আলাদা লেয়ার */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-image: radial-gradient(
-    circle at 50% 0%,
-    rgba(45, 27, 105, 0.8) 0%,
-    transparent 60%
-  );
-  z-index: -1;
-  pointer-events: none;
 }
 
 /* --- Navbar Styling --- */
@@ -43,10 +30,9 @@ body::before {
 }
 
 .logo {
-  color: #4ade80;
+  color: #4ade80; /* হালকা সবুজ লোগো */
   font-weight: 700;
   font-size: 1.2rem;
-  text-decoration: none;
 }
 
 .nav-links {
@@ -74,24 +60,27 @@ body::before {
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 40px auto; /* ওপর থেকে একটু গ্যাপ */
   padding: 0 30px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* ছোট স্ক্রিনে যাতে ভেঙে নিচে নামে */
 }
 
+/* --- Left Side Text --- */
 .hero-text {
   flex: 1;
   min-width: 350px;
 }
 
+/* "Hi, I'm" - কালারফুল গ্রেডিয়েন্ট টেক্সট */
 .greeting {
   font-size: 2.5rem;
   font-weight: 700;
-  background: linear-gradient(to right, #a855f7, #ec4899);
+  background: linear-gradient(to right, #a855f7, #ec4899); /* বেগুনি ও গোলাপি */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* নাম - সাদা রঙের */
 .name {
   display: block;
   font-size: 3.5rem;
@@ -102,20 +91,21 @@ body::before {
 }
 
 .role {
-  color: #4ade80;
+  color: #4ade80; /* সবুজ রঙের টাইটেল */
   font-size: 1.1rem;
   margin-top: 15px;
   font-weight: 500;
 }
 
 .description {
-  color: #94a3b8;
+  color: #94a3b8; /* হালকা ছাই রঙ */
   margin-top: 20px;
   line-height: 1.6;
   max-width: 500px;
   font-size: 0.95rem;
 }
 
+/* সোশ্যাল আইকন - সবুজ (Darshan Style) */
 .social-icons {
   margin: 30px 0;
   display: flex;
@@ -123,7 +113,7 @@ body::before {
 }
 
 .social-icons a {
-  color: #4ade80;
+  color: #4ade80; /* হুবহু ওই সবুজ রঙ */
   font-size: 1.5rem;
   transition: transform 0.3s;
 }
@@ -133,10 +123,11 @@ body::before {
   color: #22c55e;
 }
 
+/* বাটন ডিজাইন */
 .btn-resume {
   display: inline-block;
   padding: 12px 30px;
-  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+  background: linear-gradient(90deg, #ec4899, #8b5cf6); /* পিঙ্ক-বেগুনি বাটন */
   color: white;
   text-decoration: none;
   border-radius: 50px;
@@ -154,46 +145,49 @@ body::before {
 .code-window {
   flex: 1;
   min-width: 400px;
-  background: #11111b;
+  background: #11111b; /* কোড বক্সের ব্যাকগ্রাউন্ড */
   border: 1px solid #2d2d3a;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 0 60px rgba(124, 58, 237, 0.15);
+  box-shadow: 0 0 60px rgba(124, 58, 237, 0.15); /* পেছনের হালকা গ্লো */
   margin-top: 20px;
   position: relative;
-  left: 20px;
+  left: 20px; /* একটু ডান দিকে চাপানোর জন্য */
 }
 
+/* ১. পেছনের গ্লো বা কালার রিফ্লেকশন */
 .code-card-wrapper {
   position: relative;
   display: inline-block;
-  padding: 2px;
+  padding: 2px; /* বর্ডারের মতো কাজ করবে */
   border-radius: 12px;
   background: linear-gradient(
     135deg,
     rgba(168, 85, 247, 0.4),
     rgba(59, 130, 246, 0.4)
-  );
-  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.3);
+  ); /* বেগুনি-নীল আভা */
+  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.3); /* পেছনের বড় গ্লো */
 }
 
+/* ২. মূল কোড কার্ড */
 .code-card {
-  background-color: #0d0d16;
+  background-color: #0d0d16; /* খুব গাঢ় ব্যাকগ্রাউন্ড */
   padding: 25px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  font-family: "Fira Code", monospace;
-  width: 450px;
+  font-family: "Fira Code", monospace; /* সুন্দর কোড ফন্ট */
+  width: 450px; /* ফিক্সড সাইজ দিলে লাইন ভাঙবে না */
   max-width: 100%;
 }
 
+/* ৩. Apple Icons (উইন্ডো হেডার) এবং মার্জিন - FIXED MERGED */
 .window-header {
   display: flex;
   gap: 10px;
-  padding-bottom: 15px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px -5px rgba(129, 92, 246, 0.3);
+  padding-bottom: 15px; /* ডট এবং লাইনের মাঝখানের ফাঁকা */
+  margin-bottom: 20px; /* লাইন এবং নিচের কোডের মাঝখানের ফাঁকা */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* হালকা লাইন */
+  box-shadow: 0 4px 20px -5px rgba(129, 92, 246, 0.3); /* নিচে নীলচে রিফ্লেকশন */
 }
 
 .dot {
@@ -211,6 +205,7 @@ body::before {
   background-color: #27c93f;
 }
 
+/* কোড স্টাইলিং */
 .code-body pre,
 pre {
   font-family: "Fira Code", monospace;
@@ -218,7 +213,7 @@ pre {
   line-height: 1.5;
   margin: 0;
   white-space: pre;
-  overflow-x: auto;
+  overflow-x: auto; /* Fixed: allows scrolling if needed */
 }
 
 code {
@@ -227,31 +222,31 @@ code {
   color: #abb2bf;
 }
 
-/* Syntax Highlighting */
+/* সিনট্যাক্স কালার (দর্শনের মতো) */
 .keyword {
   color: #c678dd;
-}
+} /* const, function, return - পিঙ্ক/বেগুনি */
 .variable,
 .variable-name {
   color: #e5c07b;
-}
+} /* Proshanto - হলুদ */
 .operator {
   color: #ffffff;
-}
+} /* = */
 .key {
   color: #ffffff;
-}
+} /* fullName, location - সাদা */
 .string {
   color: #60cd13;
-}
+} /* 'India' - সবুজ */
 .boolean {
   color: #d19a66;
-}
+} /* true - কমলা/হলুদ */
 
-/* Cursor Animation */
+/* কার্সার অ্যানিমেশন (Blink Effect) - FIXED DUPLICATE */
 @keyframes blink {
-  from,
-  to {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -269,10 +264,10 @@ code {
   vertical-align: sub;
 }
 
-/* --- Responsive Media Queries --- */
+/* রেসপন্সিভ ডিজাইন (মোবাইলের জন্য) */
 @media (max-width: 768px) {
   .hero-container {
-    flex-direction: column-reverse;
+    flex-direction: column-reverse; /* মোবাইলে কোড নিচে যাবে */
     padding: 20px;
     text-align: center;
   }
@@ -292,6 +287,7 @@ code {
   .name {
     font-size: 2.5rem;
   }
+
   .about-content {
     flex-direction: column-reverse;
     text-align: center;
@@ -302,42 +298,105 @@ code {
   }
 }
 
-/* --- Section Headers --- */
-.section-header {
+/* --- About & Socials --- */
+.social-links {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  margin: 80px 0 50px;
+  gap: 20px;
+  margin-top: 25px;
+  margin-bottom: 30px;
 }
 
-.section-header .line {
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background: radial-gradient(
-    circle,
-    rgba(168, 85, 247, 0.5) 0%,
-    transparent 80%
-  );
-  z-index: 1;
+.social-icon {
+  font-size: 24px;
+  color: #a8b2d1;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.social-icon:hover {
+  color: #64ffda;
+  transform: translateY(-3px);
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+}
+
+.about-section {
+  padding: 100px 0;
+  color: white;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.about-text {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #d1d5db;
 }
 
 .section-title {
-  position: relative;
-  z-index: 2;
-  background: #0f172a;
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 10px 35px;
-  border-radius: 50px;
-  border: 1px solid rgba(168, 85, 247, 0.4);
-  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #ec4899;
+}
+
+.section-title span {
+  color: white;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3.5rem;
+}
+
+.about-image {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid #a855f7;
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);
 }
 
 /* --- Skills Section --- */
+.skills-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.section-title-center {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 50px;
+  display: inline-block;
+  border-bottom: 3px solid #a855f7;
+  padding-bottom: 10px;
+}
+
 .skills-container {
   display: flex;
   justify-content: center;
@@ -355,9 +414,7 @@ code {
   padding: 30px;
   width: 350px;
   box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
-  transition: all 0.3s ease-in-out;
-  position: relative;
-  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
@@ -390,7 +447,6 @@ code {
 .skill-item i {
   font-size: 40px;
   transition: transform 0.3s;
-  color: #ffffff; /* Icons default white */
 }
 
 .skill-item:hover i {
@@ -402,80 +458,133 @@ code {
   font-size: 0.9rem;
 }
 
-/* Force specific icons to white if needed */
+/* --- ১. GitHub আইকন ফিক্স (সাদা রং) --- */
+/* FontAwesome এবং Devicon দুটোর জন্যই */
 .fa-github,
 .devicon-github-original {
-  color: #ffffff !important;
+  color: #ffffff !important; /* জোর করে সাদা করা হচ্ছে */
 }
 
-/* --- Always Innovating Section (Grid Fixed) --- */
-.always-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 15px;
-  margin: 60px 0;
-  width: 100%;
-  min-height: 60px;
-}
-
-.static-text {
-  text-align: right;
-  font-size: 26px;
-  font-weight: bold;
-  color: #ffffff;
-}
-
-.changing-box {
-  justify-self: left;
-  background: linear-gradient(90deg, #a855f7, #ec4899);
-  padding: 10px 25px;
+/* --- ২. গ্লোয়িং সেকশন হেডার (Skills, About, Projects এর জন্য) --- */
+.section-header-wrapper {
   display: flex;
   align-items: center;
-  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+  justify-content: center;
   position: relative;
-  border-radius: 10px;
-  height: auto;
-  min-height: 50px;
-  transition: all 0.3s ease-in-out;
+  width: 100%;
+  margin: 60px 0 40px; /* উপরে নিচে ফাঁকা */
 }
 
-.typing-text {
+/* পেছনের আবছা লাইন */
+.section-header-wrapper .line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.5) 0%,
+    transparent 80%
+  );
+  z-index: 1;
+}
+
+/* মাঝখানের বটন স্টাইল টাইটেল */
+.section-pill {
+  position: relative;
+  z-index: 2;
+  background: #0f172a; /* গাঢ় নীল ব্যাকগ্রাউন্ড */
   color: #ffffff;
-  font-weight: bold;
-  font-size: 22px;
-  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 30px;
+  border-radius: 50px;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3); /* গ্লো এফেক্ট */
+  text-transform: capitalize;
 }
 
-/* --- Projects Section --- */
+/* --- ৩. About Me সেকশন ফিক্স --- */
+.about-text .gradient-text {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.about-text h2 {
+  font-size: 32px;
+  color: #64ffda; /* Who am I এর বাকি টেক্সট নীলচে */
+  margin-bottom: 20px;
+}
+
+/* --- ১. সেকশন হেডার (মাঝখানে এবং গ্লোয়িং) --- */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* লেখা মাঝখানে আনবে */
+  position: relative;
+  width: 100%;
+  margin: 80px 0 50px;
+}
+
+/* পেছনের লাইন */
+.section-header .line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.5) 0%,
+    transparent 80%
+  );
+  z-index: 1;
+}
+
+/* মাঝখানের প্রজেক্ট বাটন */
+.section-title {
+  position: relative;
+  z-index: 2;
+  background: #0f172a; /* পেছনের রঙের সাথে মিল রেখে */
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 35px;
+  border-radius: 50px;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+/* --- ২. গ্রিড লেআউট (পাশাপাশি কার্ড) --- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(350px, 1fr)
+  ); /* রেস্পন্সিভ কলাম */
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+/* --- ৩. কার্ড ডিজাইন --- */
 .project-card {
-  background: #111827;
+  background: #111827; /* গাঢ় নীল/কালো */
   border: 1px solid #1f2937;
   border-radius: 12px;
   padding: 25px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  overflow: hidden;
 }
 
+/* কার্ড হোভার এফেক্ট (নীল বর্ডার ও শ্যাডো) */
 .project-card:hover {
   transform: translateY(-5px);
   border-color: #3b82f6;
   box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
 }
 
+/* কার্ডের ওপরের অংশ */
 .card-top {
   display: flex;
   justify-content: space-between;
@@ -484,7 +593,7 @@ code {
 }
 
 .project-name {
-  color: #38bdf8;
+  color: #38bdf8; /* সাইয়ান/নীল কালার */
   font-size: 20px;
   font-weight: bold;
   margin: 0;
@@ -496,25 +605,28 @@ code {
   transition: color 0.3s;
 }
 .github-link:hover i {
-  color: #38bdf8;
+  color: #38bdf8; /* লিংকে মাউস নিলে নীল হবে */
 }
 
+/* ডেসক্রিপশন */
 .project-desc {
-  color: #cbd5e1;
+  color: #cbd5e1; /* হালকা সাদা */
   font-size: 15px;
   line-height: 1.6;
   margin-bottom: 25px;
   flex-grow: 1;
 }
 
+/* কার্ড ফুটার (লাইন এবং নিচের অংশ) */
 .card-footer {
-  border-top: 1px solid #1f2937;
+  border-top: 1px solid #1f2937; /* সেপারেটর লাইন */
   padding-top: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* টেক স্ট্যাক (Dots) */
 .tech-stack {
   display: flex;
   align-items: center;
@@ -524,6 +636,20 @@ code {
   font-weight: 500;
 }
 
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.yellow {
+  background-color: #facc15;
+}
+.orange {
+  background-color: #f97316;
+}
+
+/* ডানদিকের বাটন */
 .visit-btn {
   color: #e2e8f0;
   text-decoration: underline;
@@ -536,7 +662,7 @@ code {
   text-decoration: none;
 }
 
-/* --- Experience / Timeline --- */
+/* মেইন কন্টেইনার */
 .timeline-container {
   max-width: 900px;
   margin: 0 auto;
@@ -544,25 +670,28 @@ code {
   padding: 20px 0;
 }
 
+/* বাম পাশের লম্বা লাইন */
 .timeline-container::after {
   content: "";
   position: absolute;
   width: 2px;
-  background: rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.3); /* আবছা নীল লাইন */
   top: 0;
   bottom: 0;
-  left: 150px;
+  left: 150px; /* লাইনটা কোথায় থাকবে */
   margin-left: -1px;
 }
 
+/* প্রতিটা আইটেম */
 .timeline-item {
   display: flex;
   margin-bottom: 50px;
   position: relative;
 }
 
+/* তারিখ (বাম পাশে) */
 .timeline-date {
-  width: 120px;
+  width: 120px; /* লাইনের বামে জায়গাটুকু */
   text-align: right;
   padding-right: 30px;
   color: #94a3b8;
@@ -570,41 +699,75 @@ code {
   padding-top: 10px;
 }
 
+/* মাঝখানের গোল ডট বা আইকন */
 .timeline-dot {
   width: 40px;
   height: 40px;
-  background: #1e293b;
-  border: 2px solid #3b82f6;
+  background: #1e293b; /* গাঢ় ব্যাকগ্রাউন্ড */
+  border: 2px solid #3b82f6; /* নীল বর্ডার */
   border-radius: 50%;
   position: absolute;
-  left: 150px;
+  left: 150px; /* লাইনের ঠিক উপরে বসবে */
   transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #3b82f6;
+  color: #3b82f6; /* আইকন কালার */
   z-index: 1;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4); /* গ্লো */
 }
 
+/* ডান পাশের কন্টেন্ট বক্স */
 .timeline-content {
   flex: 1;
-  margin-left: 60px;
+  margin-left: 60px; /* লাইন থেকে দূরত্ব */
   background: #111827;
-  border: 1px solid rgba(168, 85, 247, 0.3);
+  border: 1px solid rgba(168, 85, 247, 0.3); /* হালকা বেগুনি বর্ডার */
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease-in-out;
-  position: relative;
+  transition: transform 0.3s ease;
 }
 
 .timeline-content:hover {
   transform: translateY(-3px);
-  border-color: #a855f7;
+  border-color: #a855f7; /* হোভার করলে বর্ডার উজ্জ্বল হবে */
   box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.2);
 }
 
+/* লেখার স্টাইল */
+.role {
+  color: #e879f9; /* পিঙ্ক টাইটেল */
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.company {
+  color: #38bdf8; /* নীল কোম্পানির নাম */
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* টেক ট্যাগস (নিচের ছোট ছোট বক্স) */
+.tech-tags span {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  margin-right: 8px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* মোবাইল রেস্পন্সিভ (ফোনে লাইনটা বামে সরে যাবে) */
 @media (max-width: 768px) {
   .timeline-container::after {
     left: 20px;
@@ -624,23 +787,22 @@ code {
     margin-top: 10px;
   }
 }
-
-/* --- Contact Section --- */
+/* --- কন্টাক্ট সেকশন --- */
 .contact-container {
   max-width: 800px;
-  margin: 0 auto 80px;
+  margin: 0 auto 80px; /* নিচে ফুটারের জন্য ফাঁকা */
   padding: 0 20px;
 }
 
+/* মেইন বক্স ডিজাইন */
 .contact-box {
-  background: #0f172a;
-  border: 1px solid rgba(168, 85, 247, 0.3);
+  background: #0f172a; /* খুব গাঢ় নীল */
+  border: 1px solid rgba(168, 85, 247, 0.3); /* হালকা বেগুনি বর্ডার */
   border-radius: 16px;
   padding: 40px;
   text-align: center;
   position: relative;
-  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.15);
-  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.15); /* সফট গ্লো */
 }
 
 .contact-subtitle {
@@ -650,6 +812,7 @@ code {
   font-weight: normal;
 }
 
+/* ইনপুট গ্রুপ */
 .input-row {
   display: flex;
   gap: 20px;
@@ -661,6 +824,7 @@ code {
   text-align: left;
 }
 
+/* লেবেল */
 .input-group label {
   display: block;
   color: #94a3b8;
@@ -670,14 +834,15 @@ code {
 }
 
 .input-group label i {
-  color: #38bdf8;
+  color: #38bdf8; /* আইকন কালার নীল */
   margin-right: 5px;
 }
 
+/* ইনপুট ফিল্ড স্টাইল */
 input,
 textarea {
   width: 100%;
-  background: transparent;
+  background: transparent; /* ট্রান্সপারেন্ট */
   border: 1px solid #334155;
   padding: 12px 15px;
   border-radius: 8px;
@@ -687,17 +852,19 @@ textarea {
   font-family: inherit;
 }
 
+/* ফোকাস করলে বর্ডার কালার হবে */
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: #a855f7;
+  border-color: #a855f7; /* বেগুনি বর্ডার */
   box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
 }
 
 textarea {
-  resize: vertical;
+  resize: vertical; /* ইউজার সাইজ ছোটবড় করতে পারবে */
 }
 
+/* সেন্ড বাটন */
 .send-btn {
   background: linear-gradient(90deg, #a855f7, #ec4899);
   color: white;
@@ -719,15 +886,16 @@ textarea {
   box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
 }
 
+/* রেস্পন্সিভ (মোবাইলে ইনপুট নিচে নিচে আসবে) */
 @media (max-width: 600px) {
   .input-row {
     flex-direction: column;
   }
 }
 
-/* --- Footer --- */
+/* --- ফুটার --- */
 .footer {
-  background: #020617;
+  background: #020617; /* একদম কালো */
   padding: 20px 0;
   border-top: 1px solid #1e293b;
   margin-top: 50px;
@@ -745,7 +913,7 @@ textarea {
 }
 
 .highlight-name {
-  color: #38bdf8;
+  color: #38bdf8; /* নামটা নীল হবে */
   font-weight: 600;
 }
 
@@ -767,39 +935,67 @@ textarea {
   color: #ffffff;
 }
 
-/* --- Spotlight Effect (Optional) --- */
-.skill-card::before,
-.project-card::before,
-.changing-box::before,
-.contact-box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+/* --- Always Container (Grid দিয়ে স্থির রাখা হয়েছে) --- */
+.always-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* সমান দুই ভাগ */
+  align-items: center;
+  gap: 15px;
+  margin: 60px 0;
   width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    800px circle at var(--x) var(--y),
-    rgba(168, 85, 247, 0.3),
-    transparent 40%
-  );
-  opacity: 0;
-  transition: opacity 0.5s;
-  pointer-events: none;
-  z-index: 1;
+  min-height: 60px; /* একটা ফিক্সড হাইট রাখা ভালো */
 }
 
-.skill-card:hover::before,
-.project-card:hover::before,
-.changing-box:hover::before,
-.contact-box:hover::before {
-  opacity: 1;
+/* বাম পাশের স্থির লেখা */
+.static-text {
+  text-align: right;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
 }
 
-.skill-card > *,
-.project-card > *,
-.changing-box > *,
-.contact-box > * {
+/* --- ডান পাশের রঙিন বক্স (আয়তাকার) --- */
+.changing-box {
+  justify-self: left; /* বামে ফিক্সড থাকবে */
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  padding: 10px 25px; /* ভেতরে জায়গা */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
   position: relative;
-  z-index: 2;
+
+  /* আয়তাকার করার জন্য বর্ডার রেডিয়াস কমানো হলো */
+  border-radius: 10px; /* 30px এর বদলে 10px */
+
+  /* হাইট আর ফিক্সড নয়, লেখার সাথে বাড়বে */
+  height: auto;
+  min-height: 50px;
+}
+
+/* যে লেখাটা টাইপ হবে */
+.typing-text {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 22px;
+  white-space: nowrap; /* লেখা ভাঙবে না */
+}
+
+/* ব্লিঙ্কিং কার্সার (|) */
+.cursor {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 5px;
+  animation: blink 1s step-end infinite;
+}
+
+/* কার্সার ব্লিঙ্ক করার এনিমেশন */
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
