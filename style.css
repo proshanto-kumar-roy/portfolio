@@ -999,7 +999,7 @@ textarea {
     opacity: 0;
   }
 }
-/* ============ MOBILE RESPONSIVE FINAL FIX ============ */
+/* ============ MOBILE RESPONSIVE FINAL FIX (MERGED) ============ */
 @media (max-width: 768px) {
   /* ১. বডি এবং মেইন কন্টেইনার ফিক্স */
   body,
@@ -1012,29 +1012,41 @@ textarea {
   .container,
   .navbar,
   .skills-container,
-  .projects-grid {
+  .projects-grid,
+  .achievements-grid {
     padding-left: 15px !important;
     padding-right: 15px !important;
     width: 100% !important;
   }
 
-  /* ২. কোড উইন্ডো (Code Window) সাইজ ফিক্স */
-  /* আগে min-width: 400px ছিল, তাই মোবাইলে কেটে যাচ্ছিল */
+  /* ২. কোড উইন্ডো (Code Window) সাইজ ফিক্স - [UPDATED] */
   .code-window {
-    min-width: auto !important;
-    width: 100% !important;
+    min-width: auto !important; /* ফিক্সড সাইজ বাতিল */
+    width: 100% !important; /* স্ক্রিনের সমান চওড়া */
+    left: 0 !important; /* ডানদিকে সরবে না */
     margin: 20px 0;
-    left: 0;
+    padding: 10px; /* প্যাডিং কমানো হলো */
   }
 
   .code-card {
-    width: 100% !important;
-    padding: 15px; /* মোবাইলে প্যাডিং কমানো হলো */
+    width: 100% !important; /* কার্ডটিও ১০০% হবে */
+    padding: 15px; /* ভেতরের জায়গা কমানো */
+    box-sizing: border-box; /* বর্ডারসহ মাপ */
   }
 
-  /* ৩. ফন্ট সাইজ কমানো (যাতে ভেঙে না যায়) */
+  /* [NEW] কোডের লেখা যাতে না কাটে, তার জন্য এই অংশটি যোগ করা হয়েছে */
+  .code-body pre,
+  pre,
+  code {
+    font-size: 11px !important; /* ফন্ট সাইজ ছোট করা হলো */
+    line-height: 1.4;
+    white-space: pre-wrap; /* লাইন লম্বা হলে ভেঙে নিচে নামবে */
+    overflow-x: hidden; /* স্ক্রলবার আসবে না */
+  }
+
+  /* ৩. ফন্ট সাইজ কমানো */
   .name {
-    font-size: 2.5rem; /* নামের সাইজ ছোট করা হলো */
+    font-size: 2.5rem;
   }
 
   .greeting {
@@ -1042,11 +1054,10 @@ textarea {
   }
 
   .section-title {
-    font-size: 1.8rem; /* টাইটেল ছোট করা হলো */
+    font-size: 1.8rem;
   }
 
   /* ৪. স্কিল এবং প্রজেক্ট কার্ড ফিক্স */
-  /* আগে width: 350px ফিক্সড ছিল, এখন স্ক্রিন অনুযায়ী হবে */
   .skill-card,
   .project-card,
   .achievement-card {
@@ -1055,35 +1066,47 @@ textarea {
     margin-bottom: 20px;
   }
 
+  /* স্কিল গ্রিড ফিক্স (২টা করে দেখাবে) */
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
   /* ৫. এবাউট সেকশন ছবি */
   .about-image img {
-    width: 80%; /* ছবি বেশি বড় দেখাবে না */
+    width: 80%;
     height: auto;
     margin-top: 30px;
   }
 
   /* ৬. কন্টাক্ট ফর্ম */
   .contact-box {
-    padding: 20px; /* প্যাডিং কমানো হলো */
+    padding: 20px;
   }
 
   .input-row {
-    flex-direction: column; /* ইনপুটগুলো নিচে নিচে আসবে */
+    flex-direction: column;
     gap: 15px;
   }
 
-  /* ৭. Always Innovating বক্স ফিক্স */
+  /* ৭. Always Innovating বক্স ফিক্স (Flexbox দিয়ে ঠিক করা) */
   .always-container {
-    grid-template-columns: 1fr; /* এক লাইনে না হয়ে নিচে নিচে */
-    text-align: center;
-    gap: 10px;
+    display: flex !important; /* গ্রিড সরিয়ে ফ্লেক্স দেওয়া হলো */
+    flex-direction: column; /* লেখা উপরে, বক্স নিচে */
+    align-items: center; /* মাঝখানে */
+    gap: 15px;
+    margin: 40px 0;
   }
 
   .static-text {
-    text-align: center; /* লেখা মাঝখানে */
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5px;
   }
 
   .changing-box {
-    justify-self: center; /* বক্স মাঝখানে */
+    justify-content: center;
+    width: auto !important;
+    min-width: 200px;
   }
 }
