@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -389,49 +389,43 @@
     </footer>
 
     <script>
-      const words = ["Innovating", "Learning", "Growing", "Creating"]; // শব্দগুলো এখানে
+      const words = ["Innovating", "Learning", "Growing", "Creating"];
       const typingTextSpan = document.querySelector(".typing-text");
       const cursorSpan = document.querySelector(".cursor");
 
       let wordIndex = 0;
       let charIndex = 0;
       let isDeleting = false;
-      let typingSpeed = 150; // টাইপ করার স্পিড (কমলে ফাস্ট হবে)
+      let typingSpeed = 150;
 
       function typeEffect() {
         const currentWord = words[wordIndex];
 
         if (isDeleting) {
-          // অক্ষর মোছা হচ্ছে
           typingTextSpan.textContent = currentWord.substring(0, charIndex - 1);
           charIndex--;
-          typingSpeed = 100; // মোছার স্পিড একটু বেশি
+          typingSpeed = 100;
         } else {
-          // অক্ষর টাইপ হচ্ছে
           typingTextSpan.textContent = currentWord.substring(0, charIndex + 1);
           charIndex++;
-          typingSpeed = 150; // টাইপিং স্পিড নরমাল
+          typingSpeed = 150;
         }
 
-        // শব্দ পুরোপুরি টাইপ হলে কিছুক্ষণ থামবে
         if (!isDeleting && charIndex === currentWord.length) {
           isDeleting = true;
-          typingSpeed = 2000; // ২ সেকেন্ড অপেক্ষা করবে
-          cursorSpan.style.display = "inline"; // কার্সার দেখাবে
-        }
-        // শব্দ পুরোপুরি মুছে গেলে পরের শব্দে যাবে
-        else if (isDeleting && charIndex === 0) {
+          typingSpeed = 2000;
+          cursorSpan.style.display = "inline";
+        } else if (isDeleting && charIndex === 0) {
           isDeleting = false;
-          wordIndex = (wordIndex + 1) % words.length; // পরের শব্দ, লুপ হবে
-          typingSpeed = 500; // নতুন শব্দ শুরুর আগে একটু বিরতি
+          wordIndex = (wordIndex + 1) % words.length;
+          typingSpeed = 500;
         }
 
         setTimeout(typeEffect, typingSpeed);
       }
 
-      // পেজ লোড হলে টাইপিং শুরু হবে
       document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(typeEffect, 1000); // ১ সেকেন্ড পর শুরু
+        setTimeout(typeEffect, 1000);
       });
     </script>
   </body>
