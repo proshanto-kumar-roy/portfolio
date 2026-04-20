@@ -32,7 +32,7 @@
       </ul>
     </nav>
 
-    <section class="hero-container">
+    <section class="hero-container" id="home">
       <div class="hero-text">
         <h1>
           <span class="greeting">Hi, I'm</span> <br />
@@ -65,7 +65,7 @@
           ></a>
         </div>
 
-        <a href="resume.pdf" class="btn-resume">
+        <a href="resume.pdf" target="_blank" class="btn-resume">
           GET RESUME <i class="fas fa-arrow-right"></i>
         </a>
       </div>
@@ -264,6 +264,45 @@
       </div>
     </section>
 
+    <section id="coding-profile" style="margin-top: 50px">
+      <div class="section-header">
+        <div class="line"></div>
+        <span class="section-title">Coding Profile</span>
+      </div>
+
+      <div class="leetcode-stats" style="text-align: center; margin: 40px 0">
+        <h3 style="color: #38bdf8; margin-bottom: 20px; font-size: 18px">
+          Live LeetCode Progress
+        </h3>
+
+        <a
+          href="https://leetcode.com/u/ProshantoKumarRoy/"
+          target="_blank"
+          style="display: inline-block"
+        >
+          <img
+            src="https://leetcard.jacoblin.cool/ProshantoKumarRoy?theme=dark&font=Poppins&ext=heatmap"
+            alt="Proshanto's LeetCode Stats"
+            style="
+              width: 100%;
+              max-width: 550px;
+              border-radius: 12px;
+              border: 1px solid rgba(168, 85, 247, 0.3);
+              box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.4);
+              transition: transform 0.3s ease-in-out;
+            "
+            onmouseover="
+              this.style.transform = 'translateY(-8px)';
+              this.style.borderColor = '#a855f7';
+            "
+            onmouseout="
+              this.style.transform = 'translateY(0)';
+              this.style.borderColor = 'rgba(168, 85, 247, 0.3)';
+            "
+          />
+        </a>
+      </div>
+    </section>
     <section id="experience">
       <div class="section-header">
         <div class="line"></div>
@@ -379,11 +418,15 @@
         </p>
 
         <div class="footer-links">
-          <a href="mailto:your@email.com"
+          <a href="mailto:proshantokumarroy633@gmail.com"
             ><i class="fas fa-envelope"></i> Email</a
           >
-          <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a href="#"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://linkedin.com/in/proshantokumarroy"
+            ><i class="fab fa-linkedin"></i> LinkedIn</a
+          >
+          <a href="https://github.com/proshanto-kumar-roy"
+            ><i class="fab fa-github"></i> GitHub</a
+          >
         </div>
       </div>
     </footer>
